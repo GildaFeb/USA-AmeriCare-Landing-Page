@@ -48,7 +48,7 @@
 
     <footer class="border-top text-muted">
         <div class="footer-container">
-            &copy; 2025 - USA_Test_Strips_Center___Landing_Page 
+            &copy; 2025 - USA Test Strips Center Landing Page 
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
@@ -58,14 +58,11 @@
 
     <script>
         window.onload = function () {
-            // Get the current URL
             var path = window.location.pathname;
 
-            // Select all nav links
             var navLinks = document.querySelectorAll('.nav-link');
 
-            // Loop through each nav link
-            navLinks.forEach(function (link) {y
+            navLinks.forEach(function (link) {
                 if (path === link.getAttribute('href')) {
                     link.classList.add('active');
                 } else {
@@ -73,6 +70,7 @@
                 }
             });
         };
+
     </script>
 
 </body>

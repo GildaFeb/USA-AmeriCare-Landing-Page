@@ -1,8 +1,47 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿
+<link rel="stylesheet" href="~/css/home.css" asp-append-version="true" />
+<img src="~/img/curl_vector.png" alt="vector" class="floating-image">
+<div class="home-container">
+   
+    <div class="home-content">
+        <div class="image-container">
+            <img src="~/img/man_with_blue_bg.png" alt="man with cash">
+        </div>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+        <div class="text-container">
+            <span>Get Cash Today for your </span>
+            <span class="text-gradient">Diabetic Test Strips</span>
+            <span class="home-text">Yes, get paid TODAY!</span>
+        </div>
+
+        <div class="button-container">
+            <button class="button-dark">Check Prices</button>
+            <button class="button-gradient">Get a Quote Now ></button>
+        </div>
+    </div>
 </div>
+    
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Create an Intersection Observer
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible'); // Add the visible class
+                    observer.unobserve(entry.target); // Stop observing the element
+                }
+            });
+        }, { threshold: 0.5 }); // The threshold can be adjusted based on when you want to trigger the animation
+
+        // Target the elements to be observed
+        const elementsToAnimate = document.querySelectorAll('.home-content, .text-container, .button-container, .image-container img');
+
+        // Initially hide the elements
+        elementsToAnimate.forEach(element => {
+            element.classList.add('hidden');
+            observer.observe(element); // Observe each element
+        });
+    });
+
+</script>

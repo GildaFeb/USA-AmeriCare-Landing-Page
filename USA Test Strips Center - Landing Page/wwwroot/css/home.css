@@ -1,0 +1,132 @@
+﻿
+@keyframes floatUp {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+.home-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 75vh;
+    background-color: white;
+    overflow: hidden;
+    margin: 0;
+    min-width: 100vw;
+    flex-direction: row;
+}
+/* Main container with float-up effect */
+.home-content {
+    position: relative;
+    text-align: center;
+    z-index: 1;
+    align-items: center;
+    justify-content: center;
+    animation: floatUp 1s ease-out;
+}
+
+/* Text container with float-up effect */
+.text-container {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    width: 100%;
+    padding: 2vh;
+    animation: floatUp 1s ease-out;
+}
+
+/* Image container */
+.image-container {
+    animation: floatUp 1s ease-out;
+}
+    .image-container img {
+        width: 100%;
+        max-width: 60%;
+        height: auto;
+    }
+
+
+
+/* Button container */
+.button-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+}
+
+/* Button Styling */
+.button-dark, .button-gradient {
+    width: 100%;
+    max-width: 250px;
+    padding: 20px 36px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+    .button-dark:hover, .button-gradient:hover {
+        transform: scale(1.05);
+        cursor: pointer;
+    }
+
+/* Responsive Adjustments */
+@media (min-width: 768px) {
+    .button-container {
+        flex-direction: row;
+    }
+}
+
+@media (min-width: 1024px) {
+    .text-container {
+        font-size: 2rem;
+    }
+}
+
+.home-text {
+    color: var(--textBlack);
+    font-size: 14px;
+}
+
+
+/* Floating Image in the Background */
+.floating-image {
+    position: absolute;
+    width: 100%;
+    max-width: 100%;
+    top: 80vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    animation: floatAnimation 5s infinite ease-in-out;
+}
+
+/* Floating Animation */
+@keyframes floatAnimation {
+    0%, 100% {
+        transform: translate(-50%, -50%) translateY(0);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: translate(-50%, -50%) translateY(-20px);
+        opacity: 0.7;
+    }
+}
+

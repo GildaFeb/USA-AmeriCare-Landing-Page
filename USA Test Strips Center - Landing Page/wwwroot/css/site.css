@@ -32,6 +32,8 @@ body {
     --lightestBlue: #88D8FF;
     --black: #040B11;
     --white: #F3F3F3;
+    --gradientBlue: linear-gradient(to right, #0179B4, #88D8FF);
+    --textBlack: #4F4F4F;
 }
 
 body {
@@ -170,20 +172,17 @@ body {
 }
 
 
-.container {
-    flex: 1;
-}
 
 
-
-.footer {
-    background-color: #040B11;
+footer {
+    background-color: var(--primaryColor);
     color: #F3F3F3;
     text-align: center;
-    padding: 10px;
+    padding: 2px;
     position: relative;
     bottom: 0;
     width: 100%;
+    margin-top: 20px;
 }
 
 .logo-container {
@@ -229,3 +228,128 @@ body {
         transform: scale(1.08) rotate(1deg) translateY(-2px);
         box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
     }
+
+
+
+
+.button-dark {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1px;
+    border-radius: 12px;
+    padding: 20px 36px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    color: var(--white);
+    background: var(--black);
+    outline: none;
+    letter-spacing: .5px;
+}
+
+.button-gradient {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1px;
+    border: 0px solid #000;
+    border-radius: 12px;
+    padding: 20px 36px;
+    font-size: 16px;
+    font-weight: bolder;
+    cursor: pointer;
+    color: var(--white);
+    background: linear-gradient(to right, #0179B4, #88D8FF);
+    outline: none;
+    transition: all 0.3s ease-in-out;
+    letter-spacing: .5px;
+}
+
+
+.text-gradient {
+    background: linear-gradient(to right, #0179B4, #88D8FF);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: bold;
+}
+
+
+
+.text-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    padding: 20px;
+}
+
+    /* The blue box behind the man with money */
+    .text-center .blue-box-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1; 
+        display: flex;
+        justify-content: center;
+    }
+
+        /* Blue Box Styling */
+        .text-center .blue-box-container img {
+            width: 100%; 
+            max-width: 600px; 
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+/* Dark button styling */
+.button-dark {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1px;
+    border-radius: 12px;
+    padding: 20px 36px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    color: var(--white);
+    background: var(--black);
+    outline: none;
+    letter-spacing: .5px;
+}
+
+/* Gradient button styling */
+.button-gradient {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1px;
+    border: 0px solid #000;
+    border-radius: 12px;
+    padding: 20px 36px;
+    font-size: 28px;
+    font-weight: bolder;
+    cursor: pointer;
+    color: var(--white);
+    background: linear-gradient(to right, #0179B4, #88D8FF);
+    outline: none;
+    transition: all 0.3s ease-in-out;
+    letter-spacing: .5px;
+}
+
+/* Gradient text */
+.text-gradient {
+    background: linear-gradient(to right, #0179B4, #88D8FF);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: bold;
+}
