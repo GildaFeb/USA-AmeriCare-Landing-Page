@@ -17,11 +17,23 @@ namespace USA_Test_Strips_Center___Landing_Page.Controllers
         {
             return View();
         }
-
-        public IActionResult Privacy()
+        public IActionResult Instructions()
         {
             return View();
         }
+        public IActionResult Faqs()
+        {
+            return View();
+        }
+        public IActionResult Contact()
+        {
+            return View();
+        }
+        public IActionResult SellNow()
+        {
+            return View();
+        }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
