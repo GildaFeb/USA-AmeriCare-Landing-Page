@@ -1,2 +1,14 @@
-﻿body {
+﻿.home-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 75vh;
+    background-color: white;
+    overflow: hidden;
+    margin: 0;
+    min-width: 100vw;
+    flex-direction: row;
+    margin-top: 5vh;
+    height: 100vh;
 }

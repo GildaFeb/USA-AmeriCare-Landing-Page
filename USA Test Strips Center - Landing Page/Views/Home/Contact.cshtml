@@ -1,6 +1,47 @@
 ﻿@{
     ViewData["Title"] = "Privacy Policy";
 }
-<h1>@ViewData["Title"]</h1>
 
-<p>Use this page to detail your site's privacy policy.</p>
+<link rel="stylesheet" href="~/css/contacts.css" asp-append-version="true" />
+<div class="main-container">
+    <div class="contact-container">
+        <img src="~/img/contact1.webp" alt="Floating Logo" class="floating-img">
+        <img src="~/img/contact2.webp" alt="Floating Logo" class="floating-img">
+        <img src="~/img/contact3.webp" alt="Floating Logo" class="floating-img">
+        <img src="~/img/contact4.webp" alt="Floating Logo" class="floating-img">
+        <img src="~/img/contact7.webp" alt="Floating Logo" class="floating-img">
+        <img src="~/img/contact8.webp" alt="Floating Logo" class="floating-img">
+        <img src="~/img/temp_logo.png" alt="Floating Logo" class="floating-img">
+
+        <h3 style="color: var(--lightBlue)">Get in Touch</h3>
+        <form>
+            <div class="mb-3">
+                <input type="text" class="form-control" placeholder="Your Name">
+            </div>
+            <div class="mb-3">
+                <input type="email" class="form-control" placeholder="Your Email">
+            </div>
+            <div class="mb-3">
+                <input type="email" class="form-control" placeholder="Your Phone Number">
+            </div>
+            <div class="mb-3">
+                <textarea class="form-control" rows="5" placeholder="Questions or Comments"></textarea>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-custom mb-4">Send Message</button>
+            </div>
+        </form>
+        <div class="row text-center mb-4 d-flex flex-column align-items-center">
+            <div class="contact-cards-wrapper">
+                <div class="contact-card"> 
+                    <p> <span style="color: var(--textBlack); font-weight: 700;">TELEPHONE NUMBER</span> <br/> 1.772.742.4906</p>
+                </div>
+                <div class="contact-card">
+                    <p> <span style="color: var(--textBlack); font-weight: 700;">EMAIL</span> <br /> info@usatstripscenter.com</</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+</div>
