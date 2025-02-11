@@ -15,6 +15,7 @@ html {
 html {
   position: relative;
   min-height: 100%;
+  min-width: 100%;
 }
 
 body {
@@ -30,15 +31,11 @@ body {
     --secondaryColor: #00598D;
     --lightBlue: #0179B4;
     --lightestBlue: #88D8FF;
-    --black: #040B11;
+    --black: #18181B;
     --white: #F3F3F3;
     --gradientBlue: linear-gradient(to right, #0179B4, #88D8FF);
     --textBlack: #4F4F4F;
-}
-
-body {
-    margin: 0;
-    font-family: Inter, sans-serif;
+    --header: #191919;
 }
 
 .navbar {
@@ -207,19 +204,20 @@ footer {
     border: 2px solid #000; 
     border-radius: 12px;
     padding: 12px 24px;
-    font-size: 14px; 
-    font-weight: bolder;
+    font-size: .8rem; 
+    font-weight: 900;
     cursor: pointer;
     color: #141B22;
     background: #88D8FF;
     outline: none; 
     transition: all 0.3s ease-in-out; 
     text-transform: uppercase;
+    height: 45px
 }
 
     .sell-button img {
-        width: 24px; /* Adjust icon size */
-        height: 24px;
+        width: 16px; /* Adjust icon size */
+        height: 15px;
     }
 
     .sell-button:hover {
@@ -352,4 +350,19 @@ footer {
     background-clip: text;
     color: transparent;
     font-weight: bold;
+}
+
+
+.header-black {
+    font-weight: 800;
+    color: var(--black);
+    font-size: 3vh;
+    text-transform: uppercase;
+}
+
+.header-blue {
+    font-weight: 800;
+    color: var(--lightBlue);
+    font-size: 3vh;
+    text-transform: uppercase;
 }
