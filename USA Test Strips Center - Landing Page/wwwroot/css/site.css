@@ -18,6 +18,18 @@ html {
   min-width: 100%;
 }
 
+    html::-webkit-scrollbar {
+        display: none;
+    }
+
+html {
+    scrollbar-width: none;
+}
+
+html {
+    -ms-overflow-style: none;
+}
+
 body {
     margin-bottom: 60px;
     z-index: 1;
@@ -44,11 +56,13 @@ body {
     align-items: center;
     background-color: var(--black);
     color: var(--white);
-    padding: 18px 15%;
+    padding: 1% 5%;
     border-radius: 12px;
     margin: 10px;
     text-transform: capitalize;
-
+    position: fixed;
+    z-index: 99999999999;
+    width: 88vw;
 }
 
     .navbar a {

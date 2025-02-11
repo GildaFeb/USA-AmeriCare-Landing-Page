@@ -21,6 +21,8 @@
     margin: 0;
     min-width: 100vw;
     flex-direction: row;
+    margin-top: 5vh;
+    height: 100vh
 }
 /* Main container with float-up effect */
 .home-content {
@@ -52,7 +54,7 @@
     animation: floatUp 1s ease-out;
 }
     .image-container img {
-        width: 100%;
+        width: 50%;
         max-width: 60%;
         height: auto;
     }
