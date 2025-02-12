@@ -209,28 +209,51 @@ footer {
     font-weight: bolder;
     font-size: 18px;
 }
+@keyframes soft-shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+
+    10%, 30% {
+        transform: rotate(-2deg);
+    }
+
+    20%, 40% {
+        transform: rotate(2deg);
+    }
+
+    50% {
+        transform: translateX(0);
+    }
+    /* Reset after shaking */
+}
 
 .sell-button {
-    display: flex; 
+    display: flex;
     align-items: center;
-    justify-content: center; 
+    justify-content: center;
     gap: 1px;
-    border: 2px solid #000; 
+    border: 2px solid #000;
     border-radius: 12px;
     padding: 12px 24px;
-    font-size: .8rem; 
+    font-size: .8rem;
     font-weight: 900;
     cursor: pointer;
     color: #141B22;
     background: #88D8FF;
-    outline: none; 
-    transition: all 0.3s ease-in-out; 
+    outline: none;
+    transition: all 0.3s ease-in-out;
     text-transform: uppercase;
-    height: 45px
+    height: 45px;
 }
 
+    .sell-button.shaking {
+        animation: soft-shake 0.5s ease-in-out;
+    }
+
+
     .sell-button img {
-        width: 16px; /* Adjust icon size */
+        width: 16px; 
         height: 15px;
     }
 
@@ -240,6 +263,7 @@ footer {
         transform: scale(1.08) rotate(1deg) translateY(-2px);
         box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
     }
+
 
 
 

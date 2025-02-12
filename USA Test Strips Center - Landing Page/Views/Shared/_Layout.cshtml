@@ -34,8 +34,12 @@
                         </li>
                     </ul>
                 </div>
-                <button class="sell-button" asp-area="" asp-controller="Home" asp-action="SellNow">  <img src="~/img/wallet_icon.png" alt="App Logo"> &nbsp; SELL NOW</button>
-               
+                <form>
+                    <button type="button" class="sell-button" onclick="window.location.href='@Url.Action("SellNow", "Home")'">
+                        <img src="~/img/wallet_icon.png" alt="App Logo"> &nbsp; SELL NOW
+                    </button>
+                </form>
+
             </div>
         </nav>
 
@@ -54,7 +58,7 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     @await RenderSectionAsync("Scripts", required: false)
 
     <script>

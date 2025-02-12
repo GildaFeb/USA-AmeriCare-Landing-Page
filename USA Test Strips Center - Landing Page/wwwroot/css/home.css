@@ -117,6 +117,7 @@
     transform: translate(-50%, -50%);
     z-index: 1;
     animation: floatAnimation 5s infinite ease-in-out;
+    
 }
 
 /* Floating Animation */
@@ -132,3 +133,276 @@
     }
 }
 
+/*  HOW IT WORKS */
+
+.how-it-works-content {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.how-it-works-container {
+    margin-bottom: 30px;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 900;
+}
+
+.sub-title {
+    font-size: 1.2rem;
+    color: var(--textBlack);
+}
+
+/* Steps container layout */
+.steps-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+}
+
+/* Step item containing number circle and step card */
+.step-item {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+    .step-item.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+.step-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.number-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #191919;
+    color: var(--white);
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.separator {
+    font-size: 2rem;
+    color: var(--accentColor);
+    margin: 0 10px;
+}
+
+/* Step cards */
+.step-card {
+    width: 100%;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: left;
+}
+
+.step-title {
+    font-size: 1.2rem;
+    font-weight: 800;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.step-description {
+    font-size: 1.2rem;
+    color: var(--textBlack);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .steps-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .step-item {
+        width: 80%;
+        margin-bottom: 30px;
+    }
+
+    .step-number {
+        flex-direction: column;
+        margin-bottom: 10px;
+    }
+
+    .separator {
+        display: none;
+    }
+}
+
+/*  WHAT WE BUY */
+.what-we-buy-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background-color: #042F4D;
+    width: 100vw;
+    margin-top: 50px;
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+    .what-we-buy-content.visible {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+.what-we-buy-container {
+    flex: 1;
+    background-color: #042F4D;
+    border-radius: 8px;
+    color: white;
+    margin: 5%;
+
+}
+
+.image-container-1 {
+    background-color: #1d445f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    margin-left: 50px;
+}
+
+    .image-container-1 img {
+        max-width: 40%;
+        max-height: 40%;
+        border-radius: 8px;
+    }
+
+    .image-container-1.visible img {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+
+
+/* BUYING ITEMS */
+
+@import url('https://fonts.googleapis.com/css?family=Muli:400,400i,700,700i');
+
+.buying-container {
+   margin: 50px 0px 50px 0px ;
+}
+
+.item-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100vw;
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+.card-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+    max-width: 1250px;
+    margin: 0px auto;
+    padding: 20px;
+    gap: 20px;
+}
+
+    .card-list .card-item {
+        background: #F8F8F8;
+        padding: 20px;
+        border-radius: 8px;
+        transition: transform 0.3s ease;
+    }
+
+        .card-list .card-item:hover {
+            transform: scale(1.05); 
+        }
+
+        .card-list .card-item img {
+            width: 100%;
+            aspect-ratio: 16/9;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        .card-list .card-item .arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 40px;
+            width: 40px;
+            color: #000;
+            border: 1px solid #000;
+            border-radius: 50%;
+            margin: 20px auto 0;
+            transition: 0.2s ease;
+        }
+
+        .card-list .card-item:hover .arrow {
+            background: var(--lightestBlue);
+            border-color: var(--lightestBlue);
+            color: var(--black);
+        }
+
+    .card-list span {
+        display: inline-block;
+        background: var(--primaryColor);
+        margin-top: 32px;
+        padding: 8px 15px;
+        font-size: 0.75rem;
+        border-radius: 50px;
+        font-weight: 600;
+        color: var(--white);
+    }
+
+    .card-list a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .card-list {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .card-list {
+        grid-template-columns: 1fr; 
+        margin: 20px;
+    }
+
+        .card-list .card-item {
+            padding: 15px;
+        }
+}
+
+.buying-category{
+    width: 75vw;
+    margin: 50px 10vw 0px 10vw;
+}

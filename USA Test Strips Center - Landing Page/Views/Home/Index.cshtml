@@ -15,24 +15,609 @@
         </div>
 
         <div class="button-container">
-            <button class="button-dark">Check Prices</button>
-            <button class="button-gradient">Get a Quote Now ></button>
+            <button class="button-dark" onclick="scrollToContainer()">Check Prices</button>
+            <button class="button-gradient" onclick="window.location.href='@Url.Action("SellNow", "Home")'">Get a Quote Now &nbsp; &gt;</button>
+
+        </div>
+    </div>
+
+   
+
+</div>
+<div class="how-it-works-content">
+    <div class="how-it-works-container">
+        <span class="title">HOW IT WORKS</span> <br />
+        <span class="sub-title">A step-by-step visual guide showcasing the process of getting a quote, shipping items, and receiving payment for medical supplies.</span>
+    </div>
+
+    <div class="steps-container">
+        <!-- Step 1 -->
+        <div class="step-item">
+            <div class="step-number">
+                <span class="number-circle">1</span>
+            </div>
+            <div class="step-card">
+                <span class="step-title">Get a Quote</span>
+                <p class="step-description">Prices below are for products with 10 months or greater before the expiration date. Prices are 50% less if the expiration date is between 5-7 months from the ship date. Prices are subject to change. Please do not ship expired products or items not listed here without contacting us first. Boxes set to expire before 4 months are not eligible for our payment program, but can be donated.</p>
+            </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="step-item">
+            <div class="step-number">
+                <span class="number-circle">2</span>
+            </div>
+            <div class="step-card">
+                <span class="step-title">Ship Items</span>
+                <p class="step-description">We provide a free, pre-paid shipping label along with detailed instructions.</p>
+            </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="step-item">
+            <div class="step-number">
+                <span class="number-circle">3</span>
+            </div>
+            <div class="step-card">
+                <span class="step-title">Get Paid</span>
+                <p class="step-description">Unlike other buyers of diabetic test strips, we pay upfront, the same day you ship your items and provide a photo of the drop-off receipt. Conditions Apply *</p>
+            </div>
         </div>
     </div>
 </div>
-    
 
+<div class="what-we-buy-content" id="buying-container">
+    <div class="what-we-buy-container">
+        <span style="font-size: 3rem; font-weight: 900;">WHAT WE BUY</span> <br />
+        <span style="font-size: 1.2rem; color: #8195a4"> Prices below are for products with 10 months or greater before the expiration date. Prices are 50% less if the expiration date is between 5-7 months from the ship date. Prices are subject to change. Please do not ship expired products or items not listed here without contacting us first. Boxes set to expire before 4 months are not eligible for our payment program, but can be donated.</span>
+    </div>
+    <div class="image-container-1">
+        <img src="~/img/medical_devices.png" alt="test strips">
+    </div>
+</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<div class="buying-container">
+    <div class="buying-category">
+        <span style="font-size: 3rem; font-weight: 900;">T-Slim</span> <br />
+        <span style="font-size: 1.2rem; color: #8195a4">
+            Get cash for your test strips today!
+            <a asp-controller="Home" asp-action="SellNow" class="card-item"> Click here.</a>
+        </span>
+    </div>
+    <div class="item-container">
+        <div class="card-list">
+            <a asp-controller="Home" asp-action="SellNow" class="card-item">
+                <img src="~/img/strips/1.png" alt="Card Image">
+                <span class="developer">MEDTRONIC</span>
+                <h3>780G Pump (Factory Sealed Only)</h3>
+                <br /> $610 each
+                <div class="arrow">
+                    <i class="fas fa-arrow-right card-icon"></i>
+                </div>
+            </a>
+            <a asp-controller="Home" asp-action="SellNow" class="card-item">
+                <img src="~/img/strips/2.jpg" alt="Card Image">
+                <span class="designer">T-Slim X2 Pump & IQ Control</span>
+                <h3>(Must Be Sent Together) 7.8 Software Only</h3>
+                <br />$540 per pair
+                <div class="arrow">
+                    <i class="fas fa-arrow-right card-icon"></i>
+                </div>
+            </a>
+
+        </div>
+    </div>
+    <div class="buying-category">
+        <span style="font-size: 3rem; font-weight: 900;">Omnipod</span> <br />
+        <span style="font-size: 1.2rem; color: #8195a4">
+            Get cash for your test strips today!
+            <a asp-controller="Home" asp-action="SellNow" class="card-item"> Click here.</a>
+        </span>
+    </div>
+    <div class="item-container">
+        <div class="card-list">
+            <a asp-controller="Home" asp-action="SellNow" class="card-item">
+                <img src="~/img/strips/3.jpg" alt="Card Image">
+                <span class="editor">Omnipod 5 Starter Kit</span>
+                <h3>Factory Sealed</h3>
+                <br />$280 each
+                <div class="arrow">
+                    <i class="fas fa-arrow-right card-icon"></i>
+                </div>
+            </a>
+            <a asp-controller="Home" asp-action="SellNow" class="card-item">
+                <img src="~/img/strips/4.png" alt="Card Image">
+                <span class="editor">Omnipod Dash</span>
+                <h3>10 Pack</h3>
+                <br />$120 per 10 pack
+                <div class="arrow">
+                    <i class="fas fa-arrow-right card-icon"></i>
+                </div>
+            </a>
+
+            <a asp-controller="Home" asp-action="SellNow" class="card-item">
+                <img src="~/img/strips/5.png" alt="Card Image">
+                <span class="developer">Omnipod</span>
+                <h3>10 Pack</h3>
+                <br /> $70 per 10 pack
+                <div class="arrow">
+                    <i class="fas fa-arrow-right card-icon"></i>
+                </div>
+            </a>
+            <a asp-controller="Home" asp-action="SellNow" class="card-item">
+                <img src="~/img/strips/6.jpg" alt="Card Image">
+                <span class="designer">Omnipod 5</span>
+                <h3>5 Pack</h3>
+                <br />$140 per 5 pack
+                <div class="arrow">
+                    <i class="fas fa-arrow-right card-icon"></i>
+                </div>
+            </a>
+
+            <a asp-controller="Home" asp-action="SellNow" class="card-item">
+                <img src="~/img/strips/7.png" alt="Card Image">
+                <span class="designer">Omnipod Dash</span>
+                <h3>5 Pack</h3>
+                <br />$85 per 5 pack
+                <div class="arrow">
+                    <i class="fas fa-arrow-right card-icon"></i>
+                </div>
+            </a>
+
+            <a asp-controller="Home" asp-action="SellNow" class="card-item">
+                <img src="~/img/strips/8.png" alt="Card Image">
+                <span class="designer">Omnipod 5</span>
+                <h3>5 Pack</h3>
+                <br />$40 per 5 pack
+                <div class="arrow">
+                    <i class="fas fa-arrow-right card-icon"></i>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="buying-category">
+        <span style="font-size: 3rem; font-weight: 900;">Dexcom</span> <br />
+        <span style="font-size: 1.2rem; color: #8195a4">
+            Get cash for your test strips today!
+            <a asp-controller="Home" asp-action="SellNow" class="card-item"> Click here.</a>
+        </span>
+    </div>
+    <div class="item-container">
+        <div class="card-list">
+            <a asp-controller="Home" asp-action="SellNow" class="card-item">
+                <img src="~/img/strips/9.png" alt="Card Image">
+                <span class="editor">Dexcom G6 Sensor</span>
+                <h3>3 Pack</h3>
+                <br />$220 per 3 pack 
+                <div class="arrow">
+                    <i class="fas fa-arrow-right card-icon"></i>
+                </div>
+            </a>
+            <a asp-controller="Home" asp-action="SellNow" class="card-item">
+                <img src="~/img/strips/10.png" alt="Card Image">
+                <span class="editor">Dexcom G6 Sensor DME</span>
+                <h3>3 Pack</h3>
+                <br />$130 per 3 pack
+                <div class="arrow">
+                    <i class="fas fa-arrow-right card-icon"></i>
+                </div>
+            </a>
+
+            <a asp-controller="Home" asp-action="SellNow" class="card-item">
+                <img src="~/img/strips/10.png" alt="Card Image">
+                <span class="developer">Dexcom G6 Sensor</span>
+                <h3>1PACK - in BOX</h3>
+                <br /> $30 per pack
+                <div class="arrow">
+                    <i class="fas fa-arrow-right card-icon"></i>
+                </div>
+            </a>
+            <a asp-controller="Home" asp-action="SellNow" class="card-item">
+                <img src="~/img/strips/12.png" alt="Card Image">
+                <span class="designer">Dexcom G6 Receiver</span>
+                <h3></h3>
+                <br />$50 each
+                <div class="arrow">
+                    <i class="fas fa-arrow-right card-icon"></i>
+                </div>
+            </a>
+
+            <a asp-controller="Home" asp-action="SellNow" class="card-item">
+                <img src="~/img/strips/13.jpg" alt="Card Image">
+                <span class="designer">Dexcom G7 Receiver</span>
+                <h3></h3>
+                <br />$70-$80 each
+                <div class="arrow">
+                    <i class="fas fa-arrow-right card-icon"></i>
+                </div>
+            </a>
+
+            <a asp-controller="Home" asp-action="SellNow" class="card-item">
+                <img src="~/img/strips/14.png" alt="Card Image">
+                <span class="developer">Dexcom G6 Transmitter DME</span>
+                <h3></h3>
+                <br /> $40 each
+                <div class="arrow">
+                    <i class="fas fa-arrow-right card-icon"></i>
+                </div>
+            </a>
+            <a asp-controller="Home" asp-action="SellNow" class="card-item">
+                <img src="~/img/strips/15.jpg" alt="Card Image">
+                <span class="designer">Dexcom G7 sensor</span>
+                <h3></h3>
+                <br />$55-$60 each
+                <div class="arrow">
+                    <i class="fas fa-arrow-right card-icon"></i>
+                </div>
+            </a>
+
+            <a asp-controller="Home" asp-action="SellNow" class="card-item">
+                <img src="~/img/strips/16.png" alt="Card Image">
+                <span class="designer">Dexcom G6 Transmitter</span>
+                <h3></h3>
+                <br />$60 each
+                <div class="arrow">
+                    <i class="fas fa-arrow-right card-icon"></i>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="buying-category">
+        <span style="font-size: 3rem; font-weight: 900;">Freestyle</span> <br />
+        <span style="font-size: 1.2rem; color: #8195a4">
+            Get cash for your test strips today!
+            <a asp-controller="Home" asp-action="SellNow" class="card-item"> Click here.</a>
+        </span>
+    </div>
+    <div class="item-container">
+        <div class="card-list">
+            <a asp-controller="Home" asp-action="SellNow" class="card-item">
+                <img src="~/img/strips/17.png" alt="Card Image">
+                <span class="editor">Freestyle Libre 14 Day Sensor</span>
+                <h3></h3>
+                <br />$40 each
+                <div class="arrow">
+                    <i class="fas fa-arrow-right card-icon"></i>
+                </div>
+            </a>
+            <a asp-controller="Home" asp-action="SellNow" class="card-item">
+                <img src="~/img/strips/18.jpg" alt="Card Image">
+                <span class="editor">Freestyle Libre 2 Sensor</span>
+                <h3></h3>
+                <br />$40 each
+                <div class="arrow">
+                    <i class="fas fa-arrow-right card-icon"></i>
+                </div>
+            </a>
+
+            <a asp-controller="Home" asp-action="SellNow" class="card-item">
+                <img src="~/img/strips/19.png" alt="Card Image">
+                <span class="developer">Freestyle Libre 3</span>
+                <h3></h3>
+                <br /> $40 each
+                <div class="arrow">
+                    <i class="fas fa-arrow-right card-icon"></i>
+                </div>
+            </a>
+            <a asp-controller="Home" asp-action="SellNow" class="card-item">
+                <img src="~/img/strips/20.png" alt="Card Image">
+                <span class="designer">Freestyle Libre 2 Reader</span>
+                <h3></h3>
+                <br />$30 each
+                <div class="arrow">
+                    <i class="fas fa-arrow-right card-icon"></i>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="buying-category">
+        <span style="font-size: 3rem; font-weight: 900;">Medtronic</span> <br />
+        <span style="font-size: 1.2rem; color: #8195a4">
+            Get cash for your test strips today!
+            <a asp-controller="Home" asp-action="SellNow" class="card-item"> Click here.</a>
+        </span>
+    </div>
+    <div class="item-container">
+        <div class="card-list">
+            <a asp-controller="Home" asp-action="SellNow" class="card-item">
+                <img src="~/img/strips/21.png" alt="Card Image">
+                <span class="editor">Medtronic Guardian Sensor</span>
+                <h3></h3>
+                <br />$35 each
+                <div class="arrow">
+                    <i class="fas fa-arrow-right card-icon"></i>
+                </div>
+            </a>
+            <a asp-controller="Home" asp-action="SellNow" class="card-item">
+                <img src="~/img/strips/22.png" alt="Card Image">
+                <span class="editor">Medtronic MiniMed Quick Set</span>
+                <h3></h3>
+                <br />$20 each
+                <div class="arrow">
+                    <i class="fas fa-arrow-right card-icon"></i>
+                </div>
+            </a>
+
+            <a asp-controller="Home" asp-action="SellNow" class="card-item">
+                <img src="~/img/strips/23.png" alt="Card Image">
+                <span class="developer">Medtronic MiniMed Mio</span>
+                <h3></h3>
+                <br /> $20 each
+                <div class="arrow">
+                    <i class="fas fa-arrow-right card-icon"></i>
+                </div>
+            </a>
+            <a asp-controller="Home" asp-action="SellNow" class="card-item">
+                <img src="~/img/strips/24.png" alt="Card Image">
+                <span class="designer">Medtronic MiniMed Reservoir</span>
+                <h3></h3>
+                <br />$2 each
+                <div class="arrow">
+                    <i class="fas fa-arrow-right card-icon"></i>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="buying-category">
+        <span style="font-size: 3rem; font-weight: 900;">One Touch</span> <br />
+        <span style="font-size: 1.2rem; color: #8195a4">
+            Get cash for your test strips today!
+            <a asp-controller="Home" asp-action="SellNow" class="card-item"> Click here.</a>
+        </span>
+    </div>
+    <div class="item-container">
+        <div class="card-list">
+            <a asp-controller="Home" asp-action="SellNow" class="card-item">
+                <img src="~/img/strips/25.png" alt="Card Image">
+                <span class="editor">One Touch Ultra/Blue 100 Count</span>
+                <h3></h3>
+                <br />$40 each
+                <div class="arrow">
+                    <i class="fas fa-arrow-right card-icon"></i>
+                </div>
+            </a>
+            <a asp-controller="Home" asp-action="SellNow" class="card-item">
+                <img src="~/img/strips/26.png" alt="Card Image">
+                <span class="editor">One Touch Ultra/Blue 50 Count</span>
+                <h3></h3>
+                <br />$20 each
+                <div class="arrow">
+                    <i class="fas fa-arrow-right card-icon"></i>
+                </div>
+            </a>
+
+            <a asp-controller="Home" asp-action="SellNow" class="card-item">
+                <img src="~/img/strips/27.png" alt="Card Image">
+                <span class="developer">One Touch Ultra Blue 50 Count</span>
+                <h3></h3>
+                <br /> $7 each
+                <div class="arrow">
+                    <i class="fas fa-arrow-right card-icon"></i>
+                </div>
+            </a>
+            <a asp-controller="Home" asp-action="SellNow" class="card-item">
+                <img src="~/img/strips/28.png" alt="Card Image">
+                <span class="designer">Freestyle Lite 100 Count</span>
+                <h3></h3>
+                <br />$45 each
+                <div class="arrow">
+                    <i class="fas fa-arrow-right card-icon"></i>
+                </div>
+            </a>
+
+            <a asp-controller="Home" asp-action="SellNow" class="card-item">
+                <img src="~/img/strips/29.png" alt="Card Image">
+                <span class="editor">Freestyle Lite 50 Count</span>
+                <h3></h3>
+                <br />$25 each
+                <div class="arrow">
+                    <i class="fas fa-arrow-right card-icon"></i>
+                </div>
+            </a>
+            <a asp-controller="Home" asp-action="SellNow" class="card-item">
+                <img src="~/img/strips/30.png" alt="Card Image">
+                <span class="editor">Freestyle Lite 50 Count</span>
+                <h3></h3>
+                <br />$5 each
+                <div class="arrow">
+                    <i class="fas fa-arrow-right card-icon"></i>
+                </div>
+            </a>
+
+            <a asp-controller="Home" asp-action="SellNow" class="card-item">
+                <img src="~/img/strips/31.png" alt="Card Image">
+                <span class="developer">One Touch Verio 100 Count</span>
+                <h3></h3>
+                <br /> $25 each
+                <div class="arrow">
+                    <i class="fas fa-arrow-right card-icon"></i>
+                </div>
+            </a>
+            <a asp-controller="Home" asp-action="SellNow" class="card-item">
+                <img src="~/img/strips/32.png" alt="Card Image">
+                <span class="designer">One Touch Verio 50 Count</span>
+                <h3></h3>
+                <br />$15 each
+                <div class="arrow">
+                    <i class="fas fa-arrow-right card-icon"></i>
+                </div>
+            </a>
+            <a asp-controller="Home" asp-action="SellNow" class="card-item">
+                <img src="~/img/strips/33.png" alt="Card Image">
+                <span class="designer">One Touch Verio 50 Count</span>
+                <h3></h3>
+                <br />$5 each
+                <div class="arrow">
+                    <i class="fas fa-arrow-right card-icon"></i>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="buying-category">
+        <span style="font-size: 3rem; font-weight: 900;">ACCU-CHEK</span> <br />
+        <span style="font-size: 1.2rem; color: #8195a4">
+            Get cash for your test strips today!
+            <a asp-controller="Home" asp-action="SellNow" class="card-item"> Click here.</a>
+        </span>
+    </div>
+    <div class="item-container">
+        <div class="card-list">
+            <a asp-controller="Home" asp-action="SellNow" class="card-item">
+                <img src="~/img/strips/34.png" alt="Card Image">
+                <span class="editor">ACCU-CHEK Aviva Plus 100 Count</span>
+                <h3></h3>
+                <br />$35 each
+                <div class="arrow">
+                    <i class="fas fa-arrow-right card-icon"></i>
+                </div>
+            </a>
+            <a asp-controller="Home" asp-action="SellNow" class="card-item">
+                <img src="~/img/strips/35.png" alt="Card Image">
+                <span class="editor">ACCU-CHEK Aviva Plus 50 Count</span>
+                <h3></h3>
+                <br />$15 each
+                <div class="arrow">
+                    <i class="fas fa-arrow-right card-icon"></i>
+                </div>
+            </a>
+
+            <a asp-controller="Home" asp-action="SellNow" class="card-item">
+                <img src="~/img/strips/36.png" alt="Card Image">
+                <span class="developer">ACCU-CHEK Aviva Plus 50 Count</span>
+                <h3></h3>
+                <br /> $5 each
+                <div class="arrow">
+                    <i class="fas fa-arrow-right card-icon"></i>
+                </div>
+            </a>
+            <a asp-controller="Home" asp-action="SellNow" class="card-item">
+                <img src="~/img/strips/37.png" alt="Card Image">
+                <span class="designer">ACCU-CHEK SmartView 100 Count</span>
+                <h3></h3>
+                <br />$30 each
+                <div class="arrow">
+                    <i class="fas fa-arrow-right card-icon"></i>
+                </div>
+            </a>
+
+            <a asp-controller="Home" asp-action="SellNow" class="card-item">
+                <img src="~/img/strips/38.png" alt="Card Image">
+                <span class="editor">ACCU-CHEK SmartView 50 Count</span>
+                <h3></h3>
+                <br />$17 each
+                <div class="arrow">
+                    <i class="fas fa-arrow-right card-icon"></i>
+                </div>
+            </a>
+            <a asp-controller="Home" asp-action="SellNow" class="card-item">
+                <img src="~/img/strips/39.png" alt="Card Image">
+                <span class="editor">ACCU-CHEK SmartView 50 Count</span>
+                <h3></h3>
+                <br />$5 each
+                <div class="arrow">
+                    <i class="fas fa-arrow-right card-icon"></i>
+                </div>
+            </a>
+
+            <a asp-controller="Home" asp-action="SellNow" class="card-item">
+                <img src="~/img/strips/40.png" alt="Card Image">
+                <span class="developer">ACCU-CHEK Guide 100 Count</span>
+                <h3></h3>
+                <br /> $15 each
+                <div class="arrow">
+                    <i class="fas fa-arrow-right card-icon"></i>
+                </div>
+            </a>
+            <a asp-controller="Home" asp-action="SellNow" class="card-item">
+                <img src="~/img/strips/41.png" alt="Card Image">
+                <span class="designer">ACCU-CHEK Guide 50 Count</span>
+                <h3></h3>
+                <br />$7 each
+                <div class="arrow">
+                    <i class="fas fa-arrow-right card-icon"></i>
+                </div>
+            </a>
+            <a asp-controller="Home" asp-action="SellNow" class="card-item">
+                <img src="~/img/strips/42.png" alt="Card Image">
+                <span class="designer">ACCU-CHEK Guide 50 Count</span>
+                <h3></h3>
+                <br />$2 each
+                <div class="arrow">
+                    <i class="fas fa-arrow-right card-icon"></i>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="buying-category">
+        <span style="font-size: 3rem; font-weight: 900;">Contour</span> <br />
+        <span style="font-size: 1.2rem; color: #8195a4">
+            Get cash for your test strips today!
+            <a asp-controller="Home" asp-action="SellNow" class="card-item"> Click here.</a>
+        </span>
+    </div>
+    <div class="item-container">
+        <div class="card-list">
+            <a asp-controller="Home" asp-action="SellNow" class="card-item">
+                <img src="~/img/strips/34.png" alt="Card Image">
+                <span class="editor">Contour 100 Count</span>
+                <h3></h3>
+                <br />$30 each
+                <div class="arrow">
+                    <i class="fas fa-arrow-right card-icon"></i>
+                </div>
+            </a>
+            <a asp-controller="Home" asp-action="SellNow" class="card-item">
+                <img src="~/img/strips/35.png" alt="Card Image">
+                <span class="editor">Contour 50 Count</span>
+                <h3></h3>
+                <br />$15 each
+                <div class="arrow">
+                    <i class="fas fa-arrow-right card-icon"></i>
+                </div>
+            </a>
+
+            <a asp-controller="Home" asp-action="SellNow" class="card-item">
+                <img src="~/img/strips/36.png" alt="Card Image">
+                <span class="developer">Contour 50 Count</span>
+                <h3></h3>
+                <br /> $3 each
+                <div class="arrow">
+                    <i class="fas fa-arrow-right card-icon"></i>
+                </div>
+            </a>
+            <a asp-controller="Home" asp-action="SellNow" class="card-item">
+                <img src="~/img/strips/37.png" alt="Card Image">
+                <span class="designer">Contour Next 100 Count</span>
+                <h3></h3>
+                <br />$20 each
+                <div class="arrow">
+                    <i class="fas fa-arrow-right card-icon"></i>
+                </div>
+            </a>
+
+            <a asp-controller="Home" asp-action="SellNow" class="card-item">
+                <img src="~/img/strips/38.png" alt="Card Image">
+                <span class="editor">Contour Next 50 Count</span>
+                <h3></h3>
+                <br />$8 each
+                <div class="arrow">
+                    <i class="fas fa-arrow-right card-icon"></i>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         // Create an Intersection Observer
         const observer = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('visible'); // Add the visible class
-                    observer.unobserve(entry.target); // Stop observing the element
+                    entry.target.classList.add('visible'); 
+                    observer.unobserve(entry.target); 
                 }
             });
-        }, { threshold: 0.5 }); // The threshold can be adjusted based on when you want to trigger the animation
+        }, { threshold: 0.5 }); 
 
         // Target the elements to be observed
         const elementsToAnimate = document.querySelectorAll('.home-content, .text-container, .button-container, .image-container img');
@@ -40,8 +625,58 @@
         // Initially hide the elements
         elementsToAnimate.forEach(element => {
             element.classList.add('hidden');
-            observer.observe(element); // Observe each element
+            observer.observe(element); 
         });
     });
 
+    document.addEventListener("DOMContentLoaded", function () {
+        const stepItems = document.querySelectorAll(".step-item");
+
+        const observer = new IntersectionObserver(
+            (entries, observer) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            },
+            { threshold: 0.3 } 
+        );
+
+        stepItems.forEach((item) => observer.observe(item));
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const whatWeBuySection = document.querySelector(".what-we-buy-content");
+        const imageContainer = document.querySelector(".image-container-1");
+
+        const observer = new IntersectionObserver(
+            (entries, observer) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            },
+            { threshold: 0.3 }
+        );
+
+        observer.observe(whatWeBuySection);
+        observer.observe(imageContainer);
+    });
+    document.addEventListener("DOMContentLoaded", function () {
+        const button = document.querySelector(".sell-button");
+
+        setInterval(() => {
+            button.classList.add("shaking");
+            setTimeout(() => {
+                button.classList.remove("shaking");
+            }, 600); 
+        }, 4000); 
+    });
+    function scrollToContainer() {
+        document.getElementById('buying-container').scrollIntoView({ behavior: 'smooth' });
+    }
 </script>

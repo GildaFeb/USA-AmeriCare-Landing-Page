@@ -586,3 +586,38 @@ svg {
     .grid:last-of-type .card:nth-child(3) {
         animation-delay: 0.6s;
     }
+
+.floating-image-container {
+    position: absolute;
+    width: 100%;
+    max-width: 100%;
+    top: 75vh;
+    left: 52vw;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    animation: floatAnimation 5s infinite ease-in-out;
+}
+
+    .floating-image-container::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.5);
+        top: 0;
+        left: 0;
+    }
+
+
+/* Floating Animation */
+@keyframes floatAnimation {
+    0%, 100% {
+        transform: translate(-50%, -50%) translateY(0);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: translate(-50%, -50%) translateY(-20px);
+        opacity: 0.7;
+    }
+}
