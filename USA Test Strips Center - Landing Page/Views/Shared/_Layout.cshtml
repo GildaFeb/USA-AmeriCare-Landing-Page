@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-
+<html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,16 +12,19 @@
         <nav class="navbar">
             <div class="container">
                 <div class="logo-container">
-                    <img src="~/img/temp_logo.png"  alt="App Logo">
+                    <img src="~/img/temp_logo.png" alt="App Logo">
                     <span> LOGO </span>
                 </div>
 
-                <button class="nav-toggle" id="nav-toggle">☰</button>
+                <!-- Hamburger icon for mobile -->
+                <button class="nav-toggle" id="nav-toggle" aria-label="Toggle Navigation">
+                    ☰
+                </button>
 
                 <div class="nav-menu" id="nav-menu">
                     <ul class="nav-list">
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index" >HOME</a>
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">HOME</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Instructions">INSTRUCTIONS</a>
@@ -34,15 +37,14 @@
                         </li>
                     </ul>
                 </div>
+
                 <form>
                     <button type="button" class="sell-button" onclick="window.location.href='@Url.Action("SellNow", "Home")'">
                         <img src="~/img/wallet_icon.png" alt="App Logo"> &nbsp; SELL NOW
                     </button>
                 </form>
-
             </div>
         </nav>
-
     </header>
     <div class="container">
         <main role="main" class="pb-3">
@@ -52,16 +54,23 @@
 
     <footer class="border-top text-muted">
         <div class="footer-container">
-            &copy; 2025 - USA Test Strips Center Landing Page 
+            &copy; 2025 - USA Test Strips Center Landing Page
         </div>
     </footer>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     @await RenderSectionAsync("Scripts", required: false)
 
     <script>
+        // Toggle the menu on mobile
+               document.getElementById('nav-toggle').addEventListener('click', function() {
+            document.getElementById('nav-menu').classList.toggle('show');
+        });
+
+        
         window.onload = function () {
             var path = window.location.pathname;
 
@@ -75,8 +84,6 @@
                 }
             });
         };
-
     </script>
-
 </body>
 </html>

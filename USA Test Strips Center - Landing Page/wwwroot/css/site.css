@@ -115,25 +115,37 @@ body {
 }
 
 .nav-list {
-    list-style: none;
-    display: flex;
-    gap: 15px;
-    padding: 0;
-    margin: 0;
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: var(--black);
+    width: 100%;
+    padding: 10px;
+    border-radius: 12px;
 }
 
 .nav-item {
     display: inline-block;
 }
 
-.nav-link {
-    color: var(--white);
-    text-decoration: none;
+.nav-list {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    top: 0;
+    right: 0;
+    background-color: var(--black);
     padding: 10px;
+    border-radius: 12px;
+    width: auto;
     transition: 0.3s ease-in-out;
     letter-spacing: 1px;
     font-weight: 600;
     font-size: 14px;
+    color: var(--white);
+    text-decoration: none;
 }
 
     .nav-link:hover {
@@ -145,7 +157,7 @@ body {
     .nav-link:active {
         color: #88D8FF;
         transform: scale(0.95);
-        opacity: 0.8;
+        opacity: 0.8; 
     }
 
 
@@ -169,12 +181,15 @@ body {
     justify-content: space-between;
 }
 
+    .nav-menu.show .nav-list {
+        display: flex;
+    }
 @media screen and (max-width: 768px) {
     .nav-list {
-        display: none;
+        display: none; 
         flex-direction: column;
         position: absolute;
-        top: 60px;
+        top: 50px;
         right: 0;
         background-color: var(--black);
         width: 100%;
@@ -182,20 +197,14 @@ body {
         border-radius: 12px;
     }
 
-    .nav-item {
-        text-align: center;
-        padding: 10px;
-    }
-
     .nav-toggle {
-        display: block;
+        display: block; 
     }
 
-    .nav-menu.show {
-        display: flex;
+    .nav-menu.show .nav-list {
+        display: flex; 
     }
 }
-
 
 .footer-container {
     display: flex;
@@ -221,9 +230,9 @@ footer {
 }
 
 .logo-container {
-    display: flex; /* Enables flexbox */
-    flex-direction: row; /* Aligns items horizontally */
-    align-items: center; /* Centers items vertically */
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
     justify-content: center;
     text-align: center;
     gap: 20px; 
