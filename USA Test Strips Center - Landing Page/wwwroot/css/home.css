@@ -107,7 +107,29 @@
 }
 
 
-/* Floating Image in the Background */
+
+.image-wrapper {
+    position: relative;
+}
+
+/* Container for the floating strips */
+.floating-strips-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; 
+    z-index: 999;
+}
+
+
+.image-container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Optional floating image (if needed) */
 .floating-image {
     position: absolute;
     width: 100%;
@@ -117,19 +139,79 @@
     transform: translate(-50%, -50%);
     z-index: 1;
     animation: floatAnimation 5s infinite ease-in-out;
-    
+}
+.floating-strip-wrapper {
+    position: absolute;
+    opacity: 0;
+    animation: moveUp 1s ease-out forwards;
+    z-index: 999;
 }
 
-/* Floating Animation */
-@keyframes floatAnimation {
+/* Once in place, each inner image gently floats up and down */
+.floating-strip {
+    display: block;
+    animation: float 5s infinite ease-in-out;
+  
+}
+
+/* FINAL scattered positions for each strip (adjust as needed) */
+.strip1 {
+    top: 8%;
+    left: -18%;
+    width: 80px;
+}
+
+.strip2 {
+    top: 12%;
+    left: 82%;
+    width: 100px;
+}
+
+.strip3 {
+    top: 40%;
+    left: -30%;
+    width: 90px;
+}
+
+.strip4 {
+    top: 60%;
+    left: -12%;
+    width: 85px;
+}
+
+.strip5 {
+    top: 30%;
+    left: 96%;
+    width: 95px;
+}
+
+.strip6 {
+    top: 70%;
+    left: 85%;
+    width: 75px;
+}
+
+/* Onload Animation: Starts lower and then moves upward while fading in */
+@keyframes moveUp {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Continuous Floating Animation */
+@keyframes float {
     0%, 100% {
-        transform: translate(-50%, -50%) translateY(0);
-        opacity: 0.5;
+        transform: translateY(0);
     }
 
     50% {
-        transform: translate(-50%, -50%) translateY(-20px);
-        opacity: 0.7;
+        transform: translateY(-10px);
     }
 }
 

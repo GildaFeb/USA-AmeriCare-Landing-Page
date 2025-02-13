@@ -2,25 +2,57 @@
 <link rel="stylesheet" href="~/css/home.css" asp-append-version="true" />
 <img src="~/img/curl_vector.png" alt="vector" class="floating-image">
 <div class="home-container">
-   
     <div class="home-content">
-        <div class="image-container">
-            <img src="~/img/man_with_blue_bg.png" alt="man with cash">
+        <!-- Image wrapper gives a positioning context for the strips -->
+        <div class="image-wrapper">
+            <!-- Floating Strips Container (background decorative elements) -->
+            <div class="floating-strips-container">
+                <div class="floating-strip-wrapper strip1">
+                    <img src="~/img/strips/7.png" alt="vector" class="floating-strip">
+                </div>
+                <div class="floating-strip-wrapper strip2">
+                    <img src="~/img/strips/27.png" alt="vector" class="floating-strip">
+                </div>
+                <div class="floating-strip-wrapper strip3">
+                    <img src="~/img/strips/29.png" alt="vector" class="floating-strip">
+                </div>
+                <div class="floating-strip-wrapper strip4">
+                    <img src="~/img/strips/9.png" alt="vector" class="floating-strip">
+                </div>
+                <div class="floating-strip-wrapper strip5">
+                    <img src="~/img/strips/41.png" alt="vector" class="floating-strip">
+                </div>
+                <div class="floating-strip-wrapper strip6">
+                    <img src="~/img/strips/47.png" alt="vector" class="floating-strip">
+                </div>
+            </div>
+
+            <!-- Optional additional floating image (if still needed) -->
+            <img src="~/img/curl_vector.png" alt="vector" class="floating-image">
+
+            <!-- Main man image sits in the foreground -->
+            <div class="image-container">
+                <img src="~/img/man_with_blue_bg.png" alt="man with cash">
+            </div>
         </div>
 
+        <!-- Text Content -->
         <div class="text-container">
             <span>Get Cash Today for your </span>
             <span class="text-gradient">Diabetic Test Strips</span>
             <span class="home-text">Yes, get paid TODAY!</span>
         </div>
 
+        <!-- Buttons -->
         <div class="button-container">
             <button class="button-dark" onclick="scrollToContainer()">Check Prices</button>
-            <button class="button-gradient" onclick="window.location.href='@Url.Action("SellNow", "Home")'">Get a Quote Now &nbsp; &gt;</button>
-
+            <button class="button-gradient" onclick="window.location.href='@Url.Action("SellNow", "Home")'">
+                Get a Quote Now &nbsp; &gt;
+            </button>
         </div>
     </div>
 </div>
+
 <div class="how-it-works-content">
     <div class="how-it-works-container">
         <span class="title">HOW IT WORKS</span> <br />
