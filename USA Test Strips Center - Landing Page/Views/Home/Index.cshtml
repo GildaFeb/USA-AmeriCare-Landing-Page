@@ -20,9 +20,6 @@
 
         </div>
     </div>
-
-   
-
 </div>
 <div class="how-it-works-content">
     <div class="how-it-works-container">
@@ -607,6 +604,20 @@
         </div>
     </div>
 </div>
+
+<div class="main-donation-container">
+    <div class="donation-content">
+        <div class="donation-image-container-1">
+            <img src="~/img/donation_icon.png" alt="test strips">
+        </div>
+        <div class="donation-container">
+            <span style="font-size: 3rem; font-weight: 900;">WHAT WE BUY</span> <br />
+            <span style="font-size: 1.2rem; color: #8195a4"> Prices below are for products with 10 months or greater before the expiration date. Prices are 50% less if the expiration date is between 5-7 months from the ship date. Prices are subject to change. Please do not ship expired products or items not listed here without contacting us first. Boxes set to expire before 4 months are not eligible for our payment program, but can be donated.</span>
+        </div>
+    </div>
+</div>
+
+
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         // Create an Intersection Observer
@@ -619,10 +630,8 @@
             });
         }, { threshold: 0.5 }); 
 
-        // Target the elements to be observed
         const elementsToAnimate = document.querySelectorAll('.home-content, .text-container, .button-container, .image-container img');
 
-        // Initially hide the elements
         elementsToAnimate.forEach(element => {
             element.classList.add('hidden');
             observer.observe(element); 
@@ -664,6 +673,26 @@
         );
 
         observer.observe(whatWeBuySection);
+        observer.observe(imageContainer);
+    });
+
+     document.addEventListener("DOMContentLoaded", function () {
+        const donationSection = document.querySelector(".donation-content");
+        const imageContainer = document.querySelector(".donation-image-container-1");
+
+        const observer = new IntersectionObserver(
+            (entries, observer) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            },
+            { threshold: 0.3 }
+        );
+
+        observer.observe(donationSection);
         observer.observe(imageContainer);
     });
     document.addEventListener("DOMContentLoaded", function () {
