@@ -11,24 +11,48 @@ html {
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
   box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
-
 html {
-  position: relative;
-  min-height: 100%;
-  min-width: 100%;
+    position: relative;
+    min-height: 100%;
+    min-width: 100%;
+    overflow-x: auto; 
+    overflow-y: auto; 
 }
 
+    /* Hide vertical scrollbar by default */
     html::-webkit-scrollbar {
-        display: none;
+        width: 10px;
+        height: 10px;
     }
 
-html {
-    scrollbar-width: none;
-}
+        /* Hide only vertical scrollbar */
+        html::-webkit-scrollbar:horizontal {
+            display: none;
+        }
 
-html {
-    -ms-overflow-style: none;
-}
+    /* Style horizontal scrollbar track */
+    html::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 10px;
+    }
+
+    /* Style horizontal scrollbar thumb */
+    html::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 10px;
+        transition: background 0.3s;
+    }
+
+        /* Darken scrollbar thumb on hover */
+        html::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+    /* Show horizontal scrollbar only on hover */
+    html:hover::-webkit-scrollbar {
+        opacity: 1;
+    }
+
 
 body {
     margin-bottom: 60px;
@@ -120,8 +144,8 @@ body {
 
     .nav-link:active {
         color: #88D8FF;
-        transform: scale(0.95); /* Slightly shrink when clicked */
-        opacity: 0.8; /* Adds a pressed effect */
+        transform: scale(0.95);
+        opacity: 0.8;
     }
 
 

@@ -1,5 +1,299 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
+    ViewData["Title"] = "Sell Now";
 }
+
+<link rel="stylesheet" href="~/css/sellnow.css" asp-append-version="true" />
+<div class="sellnow-container">
+    <div class="form-container">
+        <div class="sellnow-header">
+            <span class="title">Get a Quote & Get Paid Today!</span> <br />
+            <span class="sub-title">Fill out this form to get a quote and get paid today!</span>
+        </div>
+
+        @if (TempData["SuccessMessage"] != null)
+        {
+            <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+        }
+
+        @if (TempData["ErrorMessage"] != null)
+        {
+            <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
+        }
+        <form id="quoteForm" method="POST" action="/Home/SendEmail" enctype="multipart/form-data">
+
+            <!-- General Information Section -->
+            <div class="section fade-in">
+                <h3 class="form-title">General Information</h3>
+                <label>First Name *</label>
+                <input type="text" name="firstName" required>
+
+                <label>Last Name *</label>
+                <input type="text" name="lastName" required>
+
+                <label>Phone Number *</label>
+                <input type="tel" name="phoneNumber" required>
+
+                <label>Email Address *</label>
+                <input type="email" name="email" required>
+
+                <label>Street Address *</label>
+                <input type="text" name="streetAddress" required>
+
+                <label>Apt/Suite Number (Optional)</label>
+                <input type="text" name="aptNumber">
+
+                <label>City *</label>
+                <input type="text" name="city" required>
+
+                <label>State *</label>
+                <select name="state" required>
+                    <option value="" disabled selected>Select a state</option>
+                    <option value="Alabama">Alabama</option>
+                    <option value="Alaska">Alaska</option>
+                    <option value="Arizona">Arizona</option>
+                    <option value="Arkansas">Arkansas</option>
+                    <option value="California">California</option>
+                    <option value="Colorado">Colorado</option>
+                    <option value="Connecticut">Connecticut</option>
+                    <option value="Delaware">Delaware</option>
+                    <option value="Florida">Florida</option>
+                    <option value="Georgia">Georgia</option>
+                    <option value="Hawaii">Hawaii</option>
+                    <option value="Idaho">Idaho</option>
+                    <option value="Illinois">Illinois</option>
+                    <option value="Indiana">Indiana</option>
+                    <option value="Iowa">Iowa</option>
+                    <option value="Kansas">Kansas</option>
+                    <option value="Kentucky">Kentucky</option>
+                    <option value="Louisiana">Louisiana</option>
+                    <option value="Maine">Maine</option>
+                    <option value="Maryland">Maryland</option>
+                    <option value="Massachusetts">Massachusetts</option>
+                    <option value="Michigan">Michigan</option>
+                    <option value="Minnesota">Minnesota</option>
+                    <option value="Mississippi">Mississippi</option>
+                    <option value="Missouri">Missouri</option>
+                    <option value="Montana">Montana</option>
+                    <option value="Nebraska">Nebraska</option>
+                    <option value="Nevada">Nevada</option>
+                    <option value="New Hampshire">New Hampshire</option>
+                    <option value="New Jersey">New Jersey</option>
+                    <option value="New Mexico">New Mexico</option>
+                    <option value="New York">New York</option>
+                    <option value="North Carolina">North Carolina</option>
+                    <option value="North Dakota">North Dakota</option>
+                    <option value="Ohio">Ohio</option>
+                    <option value="Oklahoma">Oklahoma</option>
+                    <option value="Oregon">Oregon</option>
+                    <option value="Pennsylvania">Pennsylvania</option>
+                    <option value="Rhode Island">Rhode Island</option>
+                    <option value="South Carolina">South Carolina</option>
+                    <option value="South Dakota">South Dakota</option>
+                    <option value="Tennessee">Tennessee</option>
+                    <option value="Texas">Texas</option>
+                    <option value="Utah">Utah</option>
+                    <option value="Vermont">Vermont</option>
+                    <option value="Virginia">Virginia</option>
+                    <option value="Washington">Washington</option>
+                    <option value="West Virginia">West Virginia</option>
+                    <option value="Wisconsin">Wisconsin</option>
+                    <option value="Wyoming">Wyoming</option>
+                </select>
+
+
+                <label>Zip Code *</label>
+                <input type="text" name="zipCode" required maxlength="10">
+            </div>
+
+            <!-- Product Details Section -->
+            <div class="section fade-in">
+                <h3 class="form-title">Product Details</h3>
+                <label>What types of items do you have to sell? *</label>
+                <select name="itemType" required>
+                   <option value="Choose Option">Choose Option</option><option value="Test Strips">Test Strips</option><option value="Omnipod 5  (Purple ) NEW">Omnipod 5  (Purple ) NEW</option><option value="Omnipod 5 Starter Kit (Purple ) NEW">Omnipod 5 Starter Kit (Purple ) NEW</option><option value="Omnipod Dash  5PK">Omnipod Dash  5PK</option><option value="Omnipod  Dash 10PK">Omnipod  Dash 10PK</option><option value="Omnipod 5PK (Regular )">Omnipod 5PK (Regular )</option><option value="Omnipod 10PK (Regular )">Omnipod 10PK (Regular )</option><option value="Dexcom G7 Sensor">Dexcom G7 Sensor</option><option value="Dexcom G7 Receiver">Dexcom G7 Receiver</option><option value="Dexcom G6 3PK Sensors (OE/ OR /OM)">Dexcom G6 3PK Sensors (OE/ OR /OM)</option><option value="Dexcom G6 1PK Sensor">Dexcom G6 1PK Sensor</option><option value="Dexcom G6 Transmitter">Dexcom G6 Transmitter</option><option value="Dexcom G6 Receiver">Dexcom G6 Receiver</option><option value="Freestyle Libre Sensor">Freestyle Libre Sensor</option><option value="Freestyle Libre Reader">Freestyle Libre Reader</option><option value="Medtronic Sensor">Medtronic Sensor</option><option value="Medtronic Quickset / Medtronic Infusion Set">Medtronic Quickset / Medtronic Infusion Set</option><option value="Tandem / Autosoft Infusion Set">Tandem / Autosoft Infusion Set</option><option value="Medtronic -780G Pump ( Factory Sealed)">Medtronic -780G Pump ( Factory Sealed)</option><option value="T-Slim X2 Pump &amp; IQ Control (Must Be Sent Together) 7.8 Software Only">T-Slim X2 Pump &amp; IQ Control (Must Be Sent Together) 7.8 Software Only</option>
+                </select>
+
+                <label>Condition of the Items *</label>
+                <select name="condition" required>
+                    <option value="">Choose Option</option>
+                    <option value="New">Mint</option>
+                    <option value="Dinged">Dinged</option>
+                    <option value="Used">Damaged</option>
+                </select>
+
+                <label>How many items do you have? *</label>
+                <input type="number" name="itemCount" required maxlength="3">
+
+                <label class="text-primary">Upload Photos</label>
+                <input type="file" name="photoUpload" accept="image/*" class="form-control form-control-lg border-primary">
+
+
+                <label>Expiration Month *</label>
+                <select name="expirationMonth" required>
+                    <option value="">Choose Option</option>
+                    <option value="January">January</option>
+                    <option value="February">February</option>
+                    <option value="March">March</option>
+                    <option value="April">April</option>
+                    <option value="May">May</option>
+                    <option value="June">June</option>
+                    <option value="July">July</option>
+                    <option value="August">August</option>
+                    <option value="September">September</option>
+                    <option value="October">October</option>
+                    <option value="November">November</option>
+                    <option value="December">December</option>
+                </select>
+
+                <label>Expiration Year *</label>
+                <select name="expirationYear" required>
+                    <option value="">Choose Option</option>
+                    <option value="2023">2023</option>
+                    <option value="2024">2024</option>
+                    <option value="2025">2025</option>
+                    <option value="2026">2026</option>
+                    <option value="2027">2027</option>
+                    <option value="2028">2028</option>
+                    <option value="2029">2029</option>
+                    <option value="2030">2030</option>
+                    <option value="2031">2031</option>
+                    <option value="2032">2032</option>
+                    <option value="2033">2033</option>
+                    <option value="2034">2034</option>
+                    <option value="2035">2035</option>
+                    <option value="2036">2036</option>
+                    <option value="2037">2037</option>
+                    <option value="2038">2038</option>
+                    <option value="2039">2039</option>
+                    <option value="2040">2040</option>
+                </select>
+
+
+                <label>How many?</label>
+                <input type="number" name="number" >
+            </div>
+
+            <!-- Additional Items Section -->
+            <div id="extraItems" class="section fade-in">
+                <h3 class="form-title">Do you have other items to sell?</h3>
+                <label>Choose Option *</label>
+                <select id="otherItems" name="otherItems" onchange="addMoreFields()" required>
+                    <option value="">Choose Option</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+
+            <!-- Additional Product Details -->
+            <div id="additionalItemsSection" class="section fade-in"></div>
+
+            <!-- Payment Details -->
+            <div class="section fade-in">
+                <h3 class="form-title">Payment Details</h3>
+                <label>How would you like to be paid? *</label>
+                <select name="paymentMethod" required>
+                    <option value="">Choose Option</option>
+                    <option value="Bank Transfer">PayPal</option>
+                    <option value="Cash">Cash App</option>
+                    <option value="Zelle">Zelle</option>
+                    <option value="Check">Check</option>
+                </select>
+
+                <label>Account Name for Payment *</label>
+                <input type="text" name="accountName" required>
+
+                <label>Note</label>
+                <textarea name="itemCount" required maxlength="1000" rows="3"> </textarea>
+            </div>
+
+            <button type="submit"  class="fade-in">Submit Form</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll(".fade-in").forEach(function (element) {
+            element.style.opacity = 0;
+            setTimeout(() => {
+                element.style.transition = "opacity 1.2s ease-in-out";
+                element.style.opacity = 1;
+            }, 300);
+        });
+    });
+
+    function addMoreFields() {
+        let extraItems = document.getElementById("extraItems");
+        let additionalItemsSection = document.getElementById("additionalItemsSection");
+        additionalItemsSection.innerHTML = "";
+
+        if (document.getElementById("otherItems").value === "Yes") {
+            additionalItemsSection.innerHTML = `
+                <label>Additional Item Type *</label>
+                 <select name="additionalItemType" required>
+                   <option value="Choose Option">Choose Option</option><option value="Test Strips">Test Strips</option><option value="Omnipod 5  (Purple ) NEW">Omnipod 5  (Purple ) NEW</option><option value="Omnipod 5 Starter Kit (Purple ) NEW">Omnipod 5 Starter Kit (Purple ) NEW</option><option value="Omnipod Dash  5PK">Omnipod Dash  5PK</option><option value="Omnipod  Dash 10PK">Omnipod  Dash 10PK</option><option value="Omnipod 5PK (Regular )">Omnipod 5PK (Regular )</option><option value="Omnipod 10PK (Regular )">Omnipod 10PK (Regular )</option><option value="Dexcom G7 Sensor">Dexcom G7 Sensor</option><option value="Dexcom G7 Receiver">Dexcom G7 Receiver</option><option value="Dexcom G6 3PK Sensors (OE/ OR /OM)">Dexcom G6 3PK Sensors (OE/ OR /OM)</option><option value="Dexcom G6 1PK Sensor">Dexcom G6 1PK Sensor</option><option value="Dexcom G6 Transmitter">Dexcom G6 Transmitter</option><option value="Dexcom G6 Receiver">Dexcom G6 Receiver</option><option value="Freestyle Libre Sensor">Freestyle Libre Sensor</option><option value="Freestyle Libre Reader">Freestyle Libre Reader</option><option value="Medtronic Sensor">Medtronic Sensor</option><option value="Medtronic Quickset / Medtronic Infusion Set">Medtronic Quickset / Medtronic Infusion Set</option><option value="Tandem / Autosoft Infusion Set">Tandem / Autosoft Infusion Set</option><option value="Medtronic -780G Pump ( Factory Sealed)">Medtronic -780G Pump ( Factory Sealed)</option><option value="T-Slim X2 Pump &amp; IQ Control (Must Be Sent Together) 7.8 Software Only">T-Slim X2 Pump &amp; IQ Control (Must Be Sent Together) 7.8 Software Only</option>
+                </select>
+
+                <label>Condition of Additional Items *</label>
+                <select name="additionalCondition" required>
+                     <option value="">Choose Option</option>
+                    <option value="New">Mint</option>
+                    <option value="Dinged">Dinged</option>
+                    <option value="Used">Damaged</option>
+                </select>
+
+                <label>How many additional items? *</label>
+                <input type="number" name="additionalItemCount" required>
+
+                  <label class="text-primary">Upload Photos</label>
+                <input type="file" name="photoUpload" accept="image/*" class="form-control form-control-lg border-primary">
+
+
+                <label>Expiration Month *</label>
+                <select name="expirationMonth" required>
+                    <option value="">Choose Option</option>
+                    <option value="January">January</option>
+                    <option value="February">February</option>
+                    <option value="March">March</option>
+                    <option value="April">April</option>
+                    <option value="May">May</option>
+                    <option value="June">June</option>
+                    <option value="July">July</option>
+                    <option value="August">August</option>
+                    <option value="September">September</option>
+                    <option value="October">October</option>
+                    <option value="November">November</option>
+                    <option value="December">December</option>
+                </select>
+
+                <label>Expiration Year *</label>
+                <select name="expirationYear" required>
+                    <option value="">Choose Option</option>
+                    <option value="2023">2023</option>
+                    <option value="2024">2024</option>
+                    <option value="2025">2025</option>
+                    <option value="2026">2026</option>
+                    <option value="2027">2027</option>
+                    <option value="2028">2028</option>
+                    <option value="2029">2029</option>
+                    <option value="2030">2030</option>
+                    <option value="2031">2031</option>
+                    <option value="2032">2032</option>
+                    <option value="2033">2033</option>
+                    <option value="2034">2034</option>
+                    <option value="2035">2035</option>
+                    <option value="2036">2036</option>
+                    <option value="2037">2037</option>
+                    <option value="2038">2038</option>
+                    <option value="2039">2039</option>
+                    <option value="2040">2040</option>
+                </select>
+
+
+                <label>How many?</label>
+                <input type="number" name="number" maxlength="20">
+
+            `;
+        }
+    }
+</script>
