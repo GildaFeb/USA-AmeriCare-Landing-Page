@@ -91,3 +91,58 @@ button {
 input[type="file"] {
     cursor: pointer;
 }
+
+
+/* Base styles for the alert */
+.alert {
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: auto;
+    max-width: 100%;
+}
+
+/* Success alert styling */
+.alert-success {
+    background-color: #28a745;
+    color: white;
+    border: 1px solid #218838;
+}
+
+    .alert-success a {
+        color: #d4edda;
+        text-decoration: underline;
+    }
+
+    .alert-success:hover {
+        background-color: #218838;
+        border-color: #1e7e34;
+    }
+
+    .alert-success p {
+        margin: 0;
+    }
+
+/* Danger alert styling */
+.alert-danger {
+    background-color: #dc3545;
+    color: white;
+    border: 1px solid #c82333;
+}
+
+    .alert-danger a {
+        color: #f8d7da;
+        text-decoration: underline;
+    }
+
+    .alert-danger:hover {
+        background-color: #c82333;
+        border-color: #bd2130;
+    }
+
+    .alert-danger p {
+        margin: 0;
+    }

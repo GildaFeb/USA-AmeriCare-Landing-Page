@@ -3,13 +3,13 @@
 }
 
 <link rel="stylesheet" href="~/css/sellnow.css" asp-append-version="true" />
+
 <div class="sellnow-container">
     <div class="form-container">
         <div class="sellnow-header">
             <span class="title">Get a Quote & Get Paid Today!</span> <br />
             <span class="sub-title">Fill out this form to get a quote and get paid today!</span>
         </div>
-
         @if (TempData["SuccessMessage"] != null)
         {
             <div class="alert alert-success">@TempData["SuccessMessage"]</div>
@@ -19,6 +19,7 @@
         {
             <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
         }
+
         <form id="quoteForm" method="POST" action="/Home/SendEmail" enctype="multipart/form-data">
 
             <!-- General Information Section -->
@@ -122,12 +123,12 @@
                 </select>
 
                 <label>How many items do you have? *</label>
-                <input type="number" name="itemCount" required maxlength="3">
+                <input type="number" name="itemTotal" required maxlength="3">
 
                 <label class="text-primary">Upload Photos</label>
                 <input type="file" name="photoUpload" accept="image/*" class="form-control form-control-lg border-primary">
 
-
+                <hr />
                 <label>Expiration Month *</label>
                 <select name="expirationMonth" required>
                     <option value="">Choose Option</option>
@@ -170,7 +171,52 @@
 
 
                 <label>How many?</label>
-                <input type="number" name="number" >
+                <input type="number" name="itemCount" >
+                <hr />
+
+                <label>Expiration Month *</label>
+                <select name="expirationMonth_second" required>
+                    <option value="">Choose Option</option>
+                    <option value="January">January</option>
+                    <option value="February">February</option>
+                    <option value="March">March</option>
+                    <option value="April">April</option>
+                    <option value="May">May</option>
+                    <option value="June">June</option>
+                    <option value="July">July</option>
+                    <option value="August">August</option>
+                    <option value="September">September</option>
+                    <option value="October">October</option>
+                    <option value="November">November</option>
+                    <option value="December">December</option>
+                </select>
+
+                <label>Expiration Year *</label>
+                <select name="expirationYear_second" required>
+                    <option value="">Choose Option</option>
+                    <option value="2023">2023</option>
+                    <option value="2024">2024</option>
+                    <option value="2025">2025</option>
+                    <option value="2026">2026</option>
+                    <option value="2027">2027</option>
+                    <option value="2028">2028</option>
+                    <option value="2029">2029</option>
+                    <option value="2030">2030</option>
+                    <option value="2031">2031</option>
+                    <option value="2032">2032</option>
+                    <option value="2033">2033</option>
+                    <option value="2034">2034</option>
+                    <option value="2035">2035</option>
+                    <option value="2036">2036</option>
+                    <option value="2037">2037</option>
+                    <option value="2038">2038</option>
+                    <option value="2039">2039</option>
+                    <option value="2040">2040</option>
+                </select>
+
+
+                <label>How many?</label>
+                <input type="number" name="itemCount_second">
             </div>
 
             <!-- Additional Items Section -->
@@ -203,7 +249,7 @@
                 <input type="text" name="accountName" required>
 
                 <label>Note</label>
-                <textarea name="itemCount" required maxlength="1000" rows="3"> </textarea>
+                <textarea name="note" required maxlength="1000" rows="3"> </textarea>
             </div>
 
             <button type="submit"  class="fade-in">Submit Form</button>
@@ -212,11 +258,21 @@
 </div>
 
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("DOMContentLoaded", function () {
         document.querySelectorAll(".fade-in").forEach(function (element) {
             element.style.opacity = 0;
             setTimeout(() => {
-                element.style.transition = "opacity 1.2s ease-in-out";
+                element.animate(
+                    [
+                        { opacity: 0, transform: "translateX(50px) scale(0.8)" }, // Start off to the right and smaller
+                        { opacity: 1, transform: "translateX(-10px) scale(1.1)" }, // Slight overshoot left and larger
+                        { opacity: 1, transform: "translateX(0) scale(1)" } // Settle at normal position and size
+                    ],
+                    {
+                        duration: 1200,
+                        easing: "ease-out"
+                    }
+                );
                 element.style.opacity = 1;
             }, 300);
         });
@@ -230,27 +286,27 @@
         if (document.getElementById("otherItems").value === "Yes") {
             additionalItemsSection.innerHTML = `
                 <label>Additional Item Type *</label>
-                 <select name="additionalItemType" required>
+                 <select name="itemType1" required>
                    <option value="Choose Option">Choose Option</option><option value="Test Strips">Test Strips</option><option value="Omnipod 5  (Purple ) NEW">Omnipod 5  (Purple ) NEW</option><option value="Omnipod 5 Starter Kit (Purple ) NEW">Omnipod 5 Starter Kit (Purple ) NEW</option><option value="Omnipod Dash  5PK">Omnipod Dash  5PK</option><option value="Omnipod  Dash 10PK">Omnipod  Dash 10PK</option><option value="Omnipod 5PK (Regular )">Omnipod 5PK (Regular )</option><option value="Omnipod 10PK (Regular )">Omnipod 10PK (Regular )</option><option value="Dexcom G7 Sensor">Dexcom G7 Sensor</option><option value="Dexcom G7 Receiver">Dexcom G7 Receiver</option><option value="Dexcom G6 3PK Sensors (OE/ OR /OM)">Dexcom G6 3PK Sensors (OE/ OR /OM)</option><option value="Dexcom G6 1PK Sensor">Dexcom G6 1PK Sensor</option><option value="Dexcom G6 Transmitter">Dexcom G6 Transmitter</option><option value="Dexcom G6 Receiver">Dexcom G6 Receiver</option><option value="Freestyle Libre Sensor">Freestyle Libre Sensor</option><option value="Freestyle Libre Reader">Freestyle Libre Reader</option><option value="Medtronic Sensor">Medtronic Sensor</option><option value="Medtronic Quickset / Medtronic Infusion Set">Medtronic Quickset / Medtronic Infusion Set</option><option value="Tandem / Autosoft Infusion Set">Tandem / Autosoft Infusion Set</option><option value="Medtronic -780G Pump ( Factory Sealed)">Medtronic -780G Pump ( Factory Sealed)</option><option value="T-Slim X2 Pump &amp; IQ Control (Must Be Sent Together) 7.8 Software Only">T-Slim X2 Pump &amp; IQ Control (Must Be Sent Together) 7.8 Software Only</option>
                 </select>
 
-                <label>Condition of Additional Items *</label>
-                <select name="additionalCondition" required>
-                     <option value="">Choose Option</option>
+                <label>Condition of the Items *</label>
+                <select name="condition1" required>
+                    <option value="">Choose Option</option>
                     <option value="New">Mint</option>
                     <option value="Dinged">Dinged</option>
                     <option value="Used">Damaged</option>
                 </select>
 
-                <label>How many additional items? *</label>
-                <input type="number" name="additionalItemCount" required>
+                <label>How many items do you have? *</label>
+                <input type="number" name="itemTotal1" required maxlength="3">
 
-                  <label class="text-primary">Upload Photos</label>
-                <input type="file" name="photoUpload" accept="image/*" class="form-control form-control-lg border-primary">
+                <label class="text-primary">Upload Photos</label>
+                <input type="file" name="photoUpload1" accept="image/*" class="form-control form-control-lg border-primary">
 
-
+                 <hr />
                 <label>Expiration Month *</label>
-                <select name="expirationMonth" required>
+                <select name="expirationMonth1" required>
                     <option value="">Choose Option</option>
                     <option value="January">January</option>
                     <option value="February">February</option>
@@ -267,7 +323,7 @@
                 </select>
 
                 <label>Expiration Year *</label>
-                <select name="expirationYear" required>
+                <select name="expirationYear1" required>
                     <option value="">Choose Option</option>
                     <option value="2023">2023</option>
                     <option value="2024">2024</option>
@@ -291,8 +347,51 @@
 
 
                 <label>How many?</label>
-                <input type="number" name="number" maxlength="20">
+                <input type="number" name="itemCount1">
+                <hr />
+                <label>Expiration Month *</label>
+                <select name="expirationMonth1_second" required>
+                    <option value="">Choose Option</option>
+                    <option value="January">January</option>
+                    <option value="February">February</option>
+                    <option value="March">March</option>
+                    <option value="April">April</option>
+                    <option value="May">May</option>
+                    <option value="June">June</option>
+                    <option value="July">July</option>
+                    <option value="August">August</option>
+                    <option value="September">September</option>
+                    <option value="October">October</option>
+                    <option value="November">November</option>
+                    <option value="December">December</option>
+                </select>
 
+                <label>Expiration Year *</label>
+                <select name="expirationYear1_second" required>
+                    <option value="">Choose Option</option>
+                    <option value="2023">2023</option>
+                    <option value="2024">2024</option>
+                    <option value="2025">2025</option>
+                    <option value="2026">2026</option>
+                    <option value="2027">2027</option>
+                    <option value="2028">2028</option>
+                    <option value="2029">2029</option>
+                    <option value="2030">2030</option>
+                    <option value="2031">2031</option>
+                    <option value="2032">2032</option>
+                    <option value="2033">2033</option>
+                    <option value="2034">2034</option>
+                    <option value="2035">2035</option>
+                    <option value="2036">2036</option>
+                    <option value="2037">2037</option>
+                    <option value="2038">2038</option>
+                    <option value="2039">2039</option>
+                    <option value="2040">2040</option>
+                </select>
+
+
+                <label>How many?</label>
+                <input type="number" name="itemCount1_second">
             `;
         }
     }

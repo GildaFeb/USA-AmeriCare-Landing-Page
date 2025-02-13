@@ -83,72 +83,143 @@ namespace USA_Test_Strips_Center___Landing_Page.Controllers
             return View();
         }
 
-        [HttpPost]
         public IActionResult SendEmail(IFormCollection form)
         {
-            try { 
-            var firstName = form["firstName"];
-            var lastName = form["lastName"];
-            var phoneNumber = form["phoneNumber"];
-            var email = form["email"];
-            var streetAddress = form["streetAddress"];
-            var city = form["city"];
-            var state = form["state"];
-            var zipCode = form["zipCode"];
-            var itemType = form["itemType"];
-            var condition = form["condition"];
-            var itemCount = form["itemCount"];
-            var photoUpload = form.Files["photoUpload"];
-            var expirationMonth = form["expirationMonth"];
-            var expirationYear = form["expirationYear"];
-            var paymentMethod = form["paymentMethod"];
-            var accountName = form["accountName"];
-            var note = form["itemCount"];
-
-            // Prepare email content
-            var sb = new StringBuilder();
-            sb.AppendLine($"First Name: {firstName}");
-            sb.AppendLine($"Last Name: {lastName}");
-            sb.AppendLine($"Phone Number: {phoneNumber}");
-            sb.AppendLine($"Email Address: {email}");
-            sb.AppendLine($"Street Address: {streetAddress}");
-            sb.AppendLine($"City: {city}");
-            sb.AppendLine($"State: {state}");
-            sb.AppendLine($"Zip Code: {zipCode}");
-            sb.AppendLine($"Item Type: {itemType}");
-            sb.AppendLine($"Condition: {condition}");
-            sb.AppendLine($"Item Count: {itemCount}");
-            sb.AppendLine($"Expiration Month: {expirationMonth}");
-            sb.AppendLine($"Expiration Year: {expirationYear}");
-            sb.AppendLine($"Payment Method: {paymentMethod}");
-            sb.AppendLine($"Account Name: {accountName}");
-            sb.AppendLine($"Note: {note}");
-
-            // Create email message
-            var message = new MailMessage();
-            message.From = new MailAddress("gildafebl@gmail.com"); 
-            message.To.Add("gildafebl@gmail.com");
-            message.Subject = "New Quote Form Submission";
-            message.Body = sb.ToString();
-
-            // Send the email
-            using (var smtpClient = new SmtpClient("smtp.gmail.com")) 
+            try
             {
-                smtpClient.Port = 587;  
-                smtpClient.Credentials = new NetworkCredential("gildafebl@gmail.com", "ydqq tlqr sevw miun"); 
-                smtpClient.EnableSsl = true;
-                smtpClient.Send(message);
-            }
+                // Retrieve form data
+                var firstName = form["firstName"];
+                var lastName = form["lastName"];
+                var phoneNumber = form["phoneNumber"];
+                var email = form["email"];
+                var streetAddress = form["streetAddress"];
+                var city = form["city"];
+                var state = form["state"];
+                var suite = form["aptNumber"];
+                var zipCode = form["zipCode"];
+                
 
-            TempData["SuccessMessage"] = "Your message has been sent successfully!";
-            return RedirectToAction("SellNow", "Home");
-                    }
-                        catch (Exception ex)
-                        {
-                            TempData["ErrorMessage"] = "Failed to send your message. Error: " + ex.ToString();
-                            return RedirectToAction("SellNow", "Home");
+                var itemType = form["itemType"];
+                var condition = form["condition"];
+                var itemTotal = form["itemTotal"];
+                var expirationMonth = form["expirationMonth"];
+                var expirationYear = form["expirationYear"];
+                var itemCount = form["itemCount"];
+                var expirationMonthSecond = form["expirationMonth_second"];
+                var expirationYearSecond = form["expirationYear_second"];
+                var itemCountSecond = form["itemCount_second"];
+                var photoUpload = form.Files["photoUpload"];
+
+                var itemType1 = form["itemType1"];
+                var condition1 = form["condition1"];
+                var itemTotal1 = form["itemTotal1"];
+                var expirationMonth1 = form["expirationMonth1"];
+                var expirationYear1 = form["expirationYear1"];
+                var itemCount1 = form["itemCount1"];
+                var expirationMonthSecond1 = form["expirationMonth1_second"];
+                var expirationYearSecond1 = form["expirationYear1_second"];
+                var itemCountSecond1 = form["itemCount1_second"];
+                var photoUpload1 = form.Files["photoUpload1"];
+
+
+                var paymentMethod = form["paymentMethod"];
+                var accountName = form["accountName"];
+                var note = form["note"];
+
+
+                // Construct email body using string interpolation
+                var emailBody = $@"
+                <html><body>
+                <h1><b>New Quote Form Submission</b></h1>
+                    
+                <h3><b>GENERAL INFORMATION</b></h3>
+                <p><b>First Name:</b> {firstName}</p>
+                <p><b>Last Name:</b> {lastName}</p>
+                <p><b>Phone Number:</b> {phoneNumber}</p>
+                <p><b>Email Address:</b> {email}</p>
+                <p><b>Street Address:</b> {streetAddress}</p>
+                <p><b>City:</b> {city}</p>
+                <p><b>State:</b> {state}</p>
+                <p><b>Suite Number:</b> {suite}</p>
+                <p><b>Zip Code:</b> {zipCode}</p>
+                <br />
+                <h3><b>ITEM DETAILS</b></h3>
+                <p><b>Item Type:</b> {itemType}</p>
+                <p><b>Condition:</b> {condition}</p>
+                <p><b>Total Item:</b> {itemTotal}</p>
+                <p>- Expiration Date - </p>
+                <p><b>Expiration Month:</b> {expirationMonth}</p>
+                <p><b>Expiration Year:</b> {expirationYear}</p>
+                <p><b>Item Count:</b> {itemCount}</p>
+                <p>- Other Expiration Date - </p>
+                <p><b>Expiration Month:</b> {expirationMonthSecond}</p>
+                <p><b>Expiration Year:</b> {expirationYearSecond}</p>
+                <p><b>Item Count:</b> {itemCountSecond}</p>
+                <br />
+
+                <h3><b>ADDITIONAL ITEMS</b></h3>
+                <p><b>Item Type:</b> {itemType1}</p>
+                <p><b>Condition:</b> {condition1}</p>
+                <p><b>Total Item:</b> {itemTotal1}</p>
+                <p>- Expiration Date - </p>
+                <p><b>Expiration Month:</b> {expirationMonth1}</p>
+                <p><b>Expiration Year:</b> {expirationYear1}</p>
+                <p><b>Item Count:</b> {itemCount1}</p>
+                <p>- Other Expiration Date - </p>
+                <p><b>Expiration Month:</b> {expirationMonthSecond1}</p>
+                <p><b>Expiration Year:</b> {expirationYearSecond1}</p>
+                <p><b>Item Count:</b> {itemCountSecond1}</p>
+                <br />
+                <h3><b>PAYMENT DETAILS</b></h3>
+                <p><b>Payment Method:</b> {paymentMethod}</p>
+                <p><b>Account Name:</b> {accountName}</p>
+                <p><b>Note:</b> {note}</p>
+                </body></html>";
+
+                // Create email message
+                var mailMessage = new MailMessage
+                {
+                    From = new MailAddress("gildafebl@gmail.com"),
+                    Subject = "New Quote Form Submission",
+                    Body = emailBody,
+                    IsBodyHtml = true
+                };
+                mailMessage.To.Add("gildafebl@gmail.com");
+
+                // Attach file if present
+                if (photoUpload != null && photoUpload.Length > 0)
+                {
+                    var stream = photoUpload.OpenReadStream();
+                    var attachment = new Attachment(stream, photoUpload.FileName);
+                    mailMessage.Attachments.Add(attachment);
                 }
+
+                if (photoUpload1 != null && photoUpload1.Length > 0)
+                {
+                    var stream = photoUpload1.OpenReadStream();
+                    var attachment = new Attachment(stream, photoUpload1.FileName);
+                    mailMessage.Attachments.Add(attachment);
+                }
+
+                // Configure SMTP Client
+                using (var smtpClient = new SmtpClient("smtp.gmail.com", 587))
+                {
+                    smtpClient.Credentials = new NetworkCredential("gildafebl@gmail.com", "ydqq tlqr sevw miun");
+                    smtpClient.EnableSsl = true;
+                    smtpClient.Send(mailMessage);
+                }
+
+                TempData["SuccessMessage"] = "Your form has been sent successfully!";
+                return RedirectToAction("SellNow", "Home");
             }
+            catch (Exception ex)
+            {
+                TempData["ErrorMessage"] = "Failed to send your form. Error: " + ex.Message;
+                return RedirectToAction("SellNow", "Home");
+            }
+        }
+
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
