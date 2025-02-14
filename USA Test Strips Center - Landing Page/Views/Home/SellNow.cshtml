@@ -6,9 +6,12 @@
 
 <div class="sellnow-container">
     <div class="form-container">
+        <img src="~/img/general_info.webp" alt="Floating Logo" class="floating-img">
+        <img src="~/img/product_icon.webp" alt="Floating Logo" class="floating-img">
+        <img src="~/img/payment_icon.webp" alt="Floating Logo" class="floating-img">
         <div class="sellnow-header">
-            <span class="title">Get a Quote & Get Paid Today!</span> <br />
-            <span class="sub-title">Fill out this form to get a quote and get paid today!</span>
+            <span class="title">Request a <span style="color: var(--lightBlue)">Quote</span> and Receive Your <span style="color: var(--lightBlue)">Payment</span> Today!</span> <br /> <span class="sub-title">Complete this form to obtain your quote and enjoy prompt payment today!</span>
+
         </div>
         @if (TempData["SuccessMessage"] != null)
         {
@@ -24,7 +27,9 @@
 
             <!-- General Information Section -->
             <div class="section fade-in">
-                <h3 class="form-title">General Information</h3>
+                <div class="header-container">
+                    <span class="form-title">General Information</span>
+                </div>
                 <label>First Name *</label>
                 <input type="text" name="firstName" required>
 
@@ -108,7 +113,9 @@
 
             <!-- Product Details Section -->
             <div class="section fade-in">
-                <h3 class="form-title">Product Details</h3>
+                <div class="header-container">
+                    <span class="form-title">Product Details Information</span>
+                </div>
                 <label>What types of items do you have to sell? *</label>
                 <select name="itemType" required>
                    <option value="Choose Option">Choose Option</option><option value="Test Strips">Test Strips</option><option value="Omnipod 5  (Purple ) NEW">Omnipod 5  (Purple ) NEW</option><option value="Omnipod 5 Starter Kit (Purple ) NEW">Omnipod 5 Starter Kit (Purple ) NEW</option><option value="Omnipod Dash  5PK">Omnipod Dash  5PK</option><option value="Omnipod  Dash 10PK">Omnipod  Dash 10PK</option><option value="Omnipod 5PK (Regular )">Omnipod 5PK (Regular )</option><option value="Omnipod 10PK (Regular )">Omnipod 10PK (Regular )</option><option value="Dexcom G7 Sensor">Dexcom G7 Sensor</option><option value="Dexcom G7 Receiver">Dexcom G7 Receiver</option><option value="Dexcom G6 3PK Sensors (OE/ OR /OM)">Dexcom G6 3PK Sensors (OE/ OR /OM)</option><option value="Dexcom G6 1PK Sensor">Dexcom G6 1PK Sensor</option><option value="Dexcom G6 Transmitter">Dexcom G6 Transmitter</option><option value="Dexcom G6 Receiver">Dexcom G6 Receiver</option><option value="Freestyle Libre Sensor">Freestyle Libre Sensor</option><option value="Freestyle Libre Reader">Freestyle Libre Reader</option><option value="Medtronic Sensor">Medtronic Sensor</option><option value="Medtronic Quickset / Medtronic Infusion Set">Medtronic Quickset / Medtronic Infusion Set</option><option value="Tandem / Autosoft Infusion Set">Tandem / Autosoft Infusion Set</option><option value="Medtronic -780G Pump ( Factory Sealed)">Medtronic -780G Pump ( Factory Sealed)</option><option value="T-Slim X2 Pump &amp; IQ Control (Must Be Sent Together) 7.8 Software Only">T-Slim X2 Pump &amp; IQ Control (Must Be Sent Together) 7.8 Software Only</option>
@@ -221,7 +228,9 @@
 
             <!-- Additional Items Section -->
             <div id="extraItems" class="section fade-in">
-                <h3 class="form-title">Do you have other items to sell?</h3>
+                <div class="header-container">
+                    <span class="form-title">Do you have other items to sell?</span>
+                </div>
                 <label>Choose Option *</label>
                 <select id="otherItems" name="otherItems" onchange="addMoreFields()" required>
                     <option value="">Choose Option</option>
@@ -235,7 +244,9 @@
 
             <!-- Payment Details -->
             <div class="section fade-in">
-                <h3 class="form-title">Payment Details</h3>
+                <div class="header-container">
+                    <span class="form-title">Payment Details</span>
+                </div>
                 <label>How would you like to be paid? *</label>
                 <select name="paymentMethod" required>
                     <option value="">Choose Option</option>
@@ -285,6 +296,9 @@
 
         if (document.getElementById("otherItems").value === "Yes") {
             additionalItemsSection.innerHTML = `
+             <div class="header-container">
+                    <span class="form-title">Additional Item</span>
+                </div>
                 <label>Additional Item Type *</label>
                  <select name="itemType1" required>
                    <option value="Choose Option">Choose Option</option><option value="Test Strips">Test Strips</option><option value="Omnipod 5  (Purple ) NEW">Omnipod 5  (Purple ) NEW</option><option value="Omnipod 5 Starter Kit (Purple ) NEW">Omnipod 5 Starter Kit (Purple ) NEW</option><option value="Omnipod Dash  5PK">Omnipod Dash  5PK</option><option value="Omnipod  Dash 10PK">Omnipod  Dash 10PK</option><option value="Omnipod 5PK (Regular )">Omnipod 5PK (Regular )</option><option value="Omnipod 10PK (Regular )">Omnipod 10PK (Regular )</option><option value="Dexcom G7 Sensor">Dexcom G7 Sensor</option><option value="Dexcom G7 Receiver">Dexcom G7 Receiver</option><option value="Dexcom G6 3PK Sensors (OE/ OR /OM)">Dexcom G6 3PK Sensors (OE/ OR /OM)</option><option value="Dexcom G6 1PK Sensor">Dexcom G6 1PK Sensor</option><option value="Dexcom G6 Transmitter">Dexcom G6 Transmitter</option><option value="Dexcom G6 Receiver">Dexcom G6 Receiver</option><option value="Freestyle Libre Sensor">Freestyle Libre Sensor</option><option value="Freestyle Libre Reader">Freestyle Libre Reader</option><option value="Medtronic Sensor">Medtronic Sensor</option><option value="Medtronic Quickset / Medtronic Infusion Set">Medtronic Quickset / Medtronic Infusion Set</option><option value="Tandem / Autosoft Infusion Set">Tandem / Autosoft Infusion Set</option><option value="Medtronic -780G Pump ( Factory Sealed)">Medtronic -780G Pump ( Factory Sealed)</option><option value="T-Slim X2 Pump &amp; IQ Control (Must Be Sent Together) 7.8 Software Only">T-Slim X2 Pump &amp; IQ Control (Must Be Sent Together) 7.8 Software Only</option>
@@ -396,4 +410,15 @@
             `;
         }
     }
+
+      document.querySelectorAll('.section *:not(input)').forEach(element => {
+        if (element.childNodes.length) {
+            element.childNodes.forEach(node => {
+                if (node.nodeType === 3 && node.nodeValue.includes('*')) {
+                    node.parentElement.innerHTML = node.parentElement.innerHTML.replace(/\*/g, '<span style="color: red;">*</span>');
+                }
+            });
+        }
+    });
+
 </script>

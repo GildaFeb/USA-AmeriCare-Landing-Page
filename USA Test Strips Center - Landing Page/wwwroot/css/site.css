@@ -183,6 +183,9 @@ body {
 
     .nav-menu.show .nav-list {
         display: flex;
+        margin: 10px;
+        border-radius: 12px;
+        width: 93%;
     }
 @media screen and (max-width: 768px) {
     .nav-list {
@@ -203,6 +206,10 @@ body {
 
     .nav-menu.show .nav-list {
         display: flex; 
+    }
+
+    .home-container .instruction-container .contact-container .faq-content .sellnow-container {
+        margin-top: 100px;
     }
 }
 
@@ -288,6 +295,7 @@ footer {
     transition: all 0.3s ease-in-out;
     text-transform: uppercase;
     height: 45px;
+    min-width: 150px;
 }
 
     .sell-button.shaking {
