@@ -190,6 +190,67 @@
     left: 85%;
     width: 75px;
 }
+/* Mobile version */
+@media (max-width: 768px) {
+    .strip1 {
+        top: 15%;
+        left: 1%;
+        width: 10px;
+    }
+        .strip1 img{
+            width: 100px;
+        }
+
+    .strip2 {
+        top: 22%;
+        left:76%;
+    }
+
+    .strip2 img {
+        width: 80px;
+    }
+
+    .strip3 {
+        top: 40%;
+        left: 10%;
+        width: 55px;
+    }
+
+        .strip3 img {
+            width: 75px;
+        }
+
+    .strip4 {
+        top: 55%;
+        left: 5%;
+        width: 50px;
+    }
+
+        .strip4 img {
+            width: 75px;
+        }
+
+    .strip5 {
+        top: 35%;
+        left: 82%;
+        width: 60px;
+    }
+
+        .strip5 img {
+            width: 90px;
+        }
+
+    .strip6 {
+        top: 50%;
+        left: 77%;
+        width: 50px;
+    }
+
+        .strip6 img {
+            width: 90px;
+        }
+}
+
 
 /* Onload Animation: Starts lower and then moves upward while fading in */
 @keyframes moveUp {
