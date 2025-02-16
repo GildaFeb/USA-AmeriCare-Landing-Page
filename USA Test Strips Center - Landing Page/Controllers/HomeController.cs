@@ -47,7 +47,7 @@ namespace USA_Test_Strips_Center___Landing_Page.Controllers
                 var smtpClient = new SmtpClient("mail.smarterasp.net")
                 {
                     Port = 587,
-                    Credentials = new NetworkCredential("info@usamericareteststrips.comm", "Welcome@1"),
+                    Credentials = new NetworkCredential("info@usamericareteststrips.com", "Welcome@1"),
                     EnableSsl = true,
                 };
 
@@ -189,12 +189,12 @@ namespace USA_Test_Strips_Center___Landing_Page.Controllers
                 // Create email message
                 var mailMessage = new MailMessage
                 {
-                    From = new MailAddress("gildafebl@gmail.com"),
+                    From = new MailAddress("info@usamericareteststrips.com"),
                     Subject = "New Quote Form Submission",
                     Body = emailBody,
                     IsBodyHtml = true
                 };
-                mailMessage.To.Add("gildafebl@gmail.com");
+                mailMessage.To.Add("info@usamericareteststrips.com");
 
                 // Attach file if present
                 if (photoUpload != null && photoUpload.Length > 0)
@@ -212,9 +212,9 @@ namespace USA_Test_Strips_Center___Landing_Page.Controllers
                 }
 
                 // Configure SMTP Client
-                using (var smtpClient = new SmtpClient("smtp.gmail.com", 587))
+                using (var smtpClient = new SmtpClient("mail.smarterasp.net", 587))
                 {
-                    smtpClient.Credentials = new NetworkCredential("gildafebl@gmail.com", "ydqq tlqr sevw miun");
+                    smtpClient.Credentials = new NetworkCredential("info@usamericareteststrips.com", "ydqq tlqr sevw miun");
                     smtpClient.EnableSsl = true;
                     smtpClient.Send(mailMessage);
                 }
