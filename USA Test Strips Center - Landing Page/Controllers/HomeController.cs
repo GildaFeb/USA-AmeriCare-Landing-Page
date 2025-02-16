@@ -44,16 +44,16 @@ namespace USA_Test_Strips_Center___Landing_Page.Controllers
         {
             try
             {
-                var smtpClient = new SmtpClient("mail.smarterasp.net")
+                var smtpClient = new SmtpClient("smtp.gmail.com")
                 {
                     Port = 587,
-                    Credentials = new NetworkCredential("info@usamericareteststrips.com", "Welcome@1"),
+                    Credentials = new NetworkCredential("usamericareteststrips@gmail.com", "qmjk fcgw miur mtaq"),
                     EnableSsl = true,
                 };
 
                 var mailMessage = new MailMessage
                 {
-                    From = new MailAddress("info@usamericareteststrips.com"),
+                    From = new MailAddress("usamericareteststrips@gmail.com"),
                     Subject = "New Contact Form Submission",
                     Body = $"<p><strong>Name:</strong> {name}</p>" +
                            $"<p><strong>Email:</strong> {email}</p>" +
@@ -62,7 +62,7 @@ namespace USA_Test_Strips_Center___Landing_Page.Controllers
                     IsBodyHtml = true,
                 };
 
-                mailMessage.To.Add(new MailAddress("info@usamericareteststrips.com"));
+                mailMessage.To.Add(new MailAddress("usamericareteststrips@gmail.com"));
                 mailMessage.ReplyToList.Add(new MailAddress(email));
 
                 await smtpClient.SendMailAsync(mailMessage);
@@ -189,12 +189,12 @@ namespace USA_Test_Strips_Center___Landing_Page.Controllers
                 // Create email message
                 var mailMessage = new MailMessage
                 {
-                    From = new MailAddress("info@usamericareteststrips.com"),
+                    From = new MailAddress("usamericareteststrips@gmail.com"),
                     Subject = "New Quote Form Submission",
                     Body = emailBody,
                     IsBodyHtml = true
                 };
-                mailMessage.To.Add("info@usamericareteststrips.com");
+                mailMessage.To.Add("usamericareteststrips@gmail.com");
 
                 // Attach file if present
                 if (photoUpload != null && photoUpload.Length > 0)
@@ -212,9 +212,9 @@ namespace USA_Test_Strips_Center___Landing_Page.Controllers
                 }
 
                 // Configure SMTP Client
-                using (var smtpClient = new SmtpClient("mail.smarterasp.net", 587))
+                using (var smtpClient = new SmtpClient("smtp.gmail.com", 587))
                 {
-                    smtpClient.Credentials = new NetworkCredential("info@usamericareteststrips.com", "ydqq tlqr sevw miun");
+                    smtpClient.Credentials = new NetworkCredential("usamericareteststrips@gmail.com", "qmjk fcgw miur mtaq");
                     smtpClient.EnableSsl = true;
                     smtpClient.Send(mailMessage);
                 }
