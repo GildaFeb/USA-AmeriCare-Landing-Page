@@ -15,6 +15,15 @@
     margin: 140px 10% 50px 10%;
 }
 
+/* Mobile view */
+@media (max-width: 768px) {
+    .form-container {
+        width: 90%;
+        margin: 140px 8% 50px 8%;
+    }
+}
+
+
 h2, h3 {
     text-align: center;
     color: #333;
@@ -192,8 +201,8 @@ input[type="file"] {
 }
 
 .floating-img:nth-child(1) {
-    top: 60vh;
-    left: 2vw;
+    top: 52vh;
+    left: 1vw;
     animation-delay: 0s;
 }
 

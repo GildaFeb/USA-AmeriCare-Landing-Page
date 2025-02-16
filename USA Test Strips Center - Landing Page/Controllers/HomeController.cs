@@ -38,22 +38,22 @@ namespace USA_Test_Strips_Center___Landing_Page.Controllers
             return View();
         }
 
-        
+
         [HttpPost]
         public async Task<IActionResult> Contact(string name, string email, string phone, string message)
         {
             try
             {
-                var smtpClient = new SmtpClient("smtp.gmail.com")
+                var smtpClient = new SmtpClient("mail.smarterasp.net")
                 {
-                    Port = 587,  
-                    Credentials = new NetworkCredential("gildafebl@gmail.com", "ydqq tlqr sevw miun"),
+                    Port = 587,
+                    Credentials = new NetworkCredential("info@usamericareteststrips.comm", "Welcome@1"),
                     EnableSsl = true,
                 };
 
                 var mailMessage = new MailMessage
                 {
-                    From = new MailAddress(email),
+                    From = new MailAddress("info@usamericareteststrips.com"),
                     Subject = "New Contact Form Submission",
                     Body = $"<p><strong>Name:</strong> {name}</p>" +
                            $"<p><strong>Email:</strong> {email}</p>" +
@@ -62,21 +62,31 @@ namespace USA_Test_Strips_Center___Landing_Page.Controllers
                     IsBodyHtml = true,
                 };
 
-                mailMessage.To.Add(new MailAddress("gildafebl@gmail.com")); 
-
+                mailMessage.To.Add(new MailAddress("info@usamericareteststrips.com"));
                 mailMessage.ReplyToList.Add(new MailAddress(email));
 
                 await smtpClient.SendMailAsync(mailMessage);
 
-                TempData["SuccessMessage"] = "Your message has been sent successfully!";
-                return RedirectToAction("Contact", "Home");
+                if (string.IsNullOrWhiteSpace(name) || string.IsNullOrWhiteSpace(email) ||
+                    string.IsNullOrWhiteSpace(phone) || string.IsNullOrWhiteSpace(message))
+                {
+                    TempData["ErrorMessage"] = "All fields are required.";
+                    return RedirectToAction("Contact", "Home");
+                }
+                else
+                {
+                    TempData["SuccessMessage"] = "Your message has been sent successfully!";
+                    return RedirectToAction("Contact", "Home");
+                }
+               
             }
             catch (Exception ex)
             {
-                TempData["ErrorMessage"] = "Failed to send your message. Error: " + ex.ToString();
+                TempData["ErrorMessage"] = "Failed to send your message. Please try again later.";
                 return RedirectToAction("Contact", "Home");
             }
         }
+
 
         public IActionResult SellNow()
         {

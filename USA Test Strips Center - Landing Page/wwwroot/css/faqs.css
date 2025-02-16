@@ -6,6 +6,7 @@
     justify-content: center;
     align-items: center;
     width: 100vw;
+  
 }
 
 /* Centered and Expanded FAQ Content */
@@ -314,7 +315,7 @@
     position: absolute;
     width: 100%;
     max-width: 100%;
-    top: 110vh;
+    top: 80vh;
     left: 50vw;
     transform: translate(-50%, -50%);
     animation: floatAnimation 5s infinite ease-in-out;
