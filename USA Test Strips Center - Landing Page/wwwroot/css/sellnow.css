@@ -218,3 +218,12 @@ input[type="file"] {
     left: 2vw;
     animation-delay: 1s;
 }
+
+
+.privacy {
+    color: white;
+}
+
+.privacy a {
+    color: orange;
+}

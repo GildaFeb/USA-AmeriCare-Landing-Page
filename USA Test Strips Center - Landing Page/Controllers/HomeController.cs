@@ -24,7 +24,18 @@ namespace USA_Test_Strips_Center___Landing_Page.Controllers
         public IActionResult Index()
         {
             return View();
+        } 
+        
+        public IActionResult TermsAndConditions()
+        {
+            return View();
         }
+
+        public IActionResult Privacy()
+        {
+            return View();
+        }
+
         public IActionResult Instructions()
         {
             return View();

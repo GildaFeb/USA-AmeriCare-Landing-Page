@@ -262,7 +262,12 @@
                 <label>Note</label>
                 <textarea name="note" required maxlength="1000" rows="3"> </textarea>
             </div>
-
+            <div class="privacy">
+                By clicking the submit button, you agree to the
+                <a asp-controller="Home" asp-action="TermsAndConditions" target="_blank">Terms and Conditions</a>,
+                <a asp-controller="Home" asp-action="Privacy" target="_blank">Privacy Policy</a>, and
+                <a asp-controller="Home" asp-action="Instructions" target="_blank">Important Instructions</a>.
+            </div>
             <button type="submit"  class="fade-in">Submit Form</button>
         </form>
     </div>
