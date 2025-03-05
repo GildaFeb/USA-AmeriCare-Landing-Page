@@ -38,10 +38,17 @@
                 <textarea name="message" class="form-control" rows="5" placeholder="Questions or Comments" required></textarea>
             </div>
             <div class="privacy">
-                Privacy policy statement-SMS Terms & Conditions: By subscribing to USAmeriCare Test Strips SMS services, you agree to receive text messages from us. USAmeriCare Test Strips will send SMS messages to communicate with customers on the status of the projects they have requested to provide a better overall customer experience. For HELP, please contact us at (917) 203-8615. To opt-out of receiving messages, reply with “STOP” at any time. Message frequency may vary. Standard message and data rates may apply.
+                <input type="checkbox" id="smsConsent" onchange="toggleSubmit()">
+                <label for="smsConsent">
+                    I agree to receive communications by text message about my inquiry from Madtwin Records LLC
+                </label>
+
+                <p><strong>Text/SMS Marketing</strong></p>
+                <p>If you choose to opt-in to SMS communications from Madtwin Records LLC, you will receive text messages at the mobile number you provide. These messages might be automated and might include promotional offers, coupons, and/or information related to Company name as well as information related to your queries. You may review our Privacy Policy to learn how your data is used.</p>
             </div>
+
             <div class="text-center">
-                <button type="submit" class="btn btn-custom mb-4">Send Message</button>
+                <button type="submit" id="submitBtn" class="btn btn-custom mb-4" disabled>Send Message</button>
             </div>
         </form>
 
@@ -59,3 +66,9 @@
     
 
 </div>
+
+<script>
+    function toggleSubmit() {
+        document.getElementById('submitBtn').disabled = !document.getElementById('smsConsent').checked;
+    }
+</script>

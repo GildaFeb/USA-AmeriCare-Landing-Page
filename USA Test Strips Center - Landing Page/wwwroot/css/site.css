@@ -458,3 +458,10 @@ footer {
     font-size: 3vh;
     text-transform: uppercase;
 }
+
+.btn-custom:disabled {
+    opacity: 0.5; 
+    cursor: not-allowed; 
+    background-color: #ccc; 
+    border-color: #aaa;
+}
